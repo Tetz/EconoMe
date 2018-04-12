@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		1311463E207F8A0600D956D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1311463D207F8A0600D956D8 /* AppDelegate.swift */; };
 		13114640207F8A0600D956D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1311463F207F8A0600D956D8 /* ViewController.swift */; };
-		13114643207F8A0600D956D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13114641207F8A0600D956D8 /* Main.storyboard */; };
 		13114645207F8A0700D956D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13114644207F8A0700D956D8 /* Assets.xcassets */; };
 		13114648207F8A0700D956D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13114646207F8A0700D956D8 /* LaunchScreen.storyboard */; };
 		13114653207F8A0700D956D8 /* otaku_wallet_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13114652207F8A0700D956D8 /* otaku_wallet_iosTests.swift */; };
 		1311465E207F8A0700D956D8 /* otaku_wallet_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1311465D207F8A0700D956D8 /* otaku_wallet_iosUITests.swift */; };
 		1311466C207F8B3000D956D8 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1311466B207F8B3000D956D8 /* SnapKit.framework */; };
 		1311466D207F8B3000D956D8 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1311466B207F8B3000D956D8 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		13114670207F8C2E00D956D8 /* Nav1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1311466F207F8C2E00D956D8 /* Nav1ViewController.swift */; };
+		13114672207F91AE00D956D8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13114671207F91AE00D956D8 /* SecondViewController.swift */; };
+		13114674207F926700D956D8 /* Nav2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13114673207F926700D956D8 /* Nav2ViewController.swift */; };
+		13114676207F92FE00D956D8 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13114675207F92FE00D956D8 /* MainTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +56,6 @@
 		1311463A207F8A0600D956D8 /* otaku-wallet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "otaku-wallet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1311463D207F8A0600D956D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1311463F207F8A0600D956D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		13114642207F8A0600D956D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13114644207F8A0700D956D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13114647207F8A0700D956D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13114649207F8A0700D956D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +66,10 @@
 		1311465D207F8A0700D956D8 /* otaku_wallet_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = otaku_wallet_iosUITests.swift; sourceTree = "<group>"; };
 		1311465F207F8A0700D956D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1311466B207F8B3000D956D8 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		1311466F207F8C2E00D956D8 /* Nav1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nav1ViewController.swift; sourceTree = "<group>"; };
+		13114671207F91AE00D956D8 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		13114673207F926700D956D8 /* Nav2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nav2ViewController.swift; sourceTree = "<group>"; };
+		13114675207F92FE00D956D8 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +123,11 @@
 			isa = PBXGroup;
 			children = (
 				1311463D207F8A0600D956D8 /* AppDelegate.swift */,
+				1311466F207F8C2E00D956D8 /* Nav1ViewController.swift */,
+				13114673207F926700D956D8 /* Nav2ViewController.swift */,
+				13114675207F92FE00D956D8 /* MainTabBarViewController.swift */,
+				13114671207F91AE00D956D8 /* SecondViewController.swift */,
 				1311463F207F8A0600D956D8 /* ViewController.swift */,
-				13114641207F8A0600D956D8 /* Main.storyboard */,
 				13114644207F8A0700D956D8 /* Assets.xcassets */,
 				13114646207F8A0700D956D8 /* LaunchScreen.storyboard */,
 				13114649207F8A0700D956D8 /* Info.plist */,
@@ -251,7 +260,6 @@
 			files = (
 				13114648207F8A0700D956D8 /* LaunchScreen.storyboard in Resources */,
 				13114645207F8A0700D956D8 /* Assets.xcassets in Resources */,
-				13114643207F8A0600D956D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13114674207F926700D956D8 /* Nav2ViewController.swift in Sources */,
+				13114672207F91AE00D956D8 /* SecondViewController.swift in Sources */,
+				13114670207F8C2E00D956D8 /* Nav1ViewController.swift in Sources */,
+				13114676207F92FE00D956D8 /* MainTabBarViewController.swift in Sources */,
 				13114640207F8A0600D956D8 /* ViewController.swift in Sources */,
 				1311463E207F8A0600D956D8 /* AppDelegate.swift in Sources */,
 			);
@@ -313,14 +325,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		13114641207F8A0600D956D8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13114642207F8A0600D956D8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		13114646207F8A0700D956D8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
