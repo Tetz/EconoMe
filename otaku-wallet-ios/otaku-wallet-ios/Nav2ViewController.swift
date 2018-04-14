@@ -16,14 +16,14 @@ final class Nav2ViewController: UIViewController {
         tableView.dataSource = self
         return tableView
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         navigationItem.title = "Nav2"
         view = tableView
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,14 +31,14 @@ final class Nav2ViewController: UIViewController {
 }
 
 extension Nav2ViewController: UITableViewDelegate {
-    
+
 }
 
 extension Nav2ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
-    
+
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }

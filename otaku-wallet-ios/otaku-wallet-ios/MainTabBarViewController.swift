@@ -11,7 +11,7 @@ import UIKit
 final class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let vc = Nav1ViewController()
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
         let nv = UINavigationController(rootViewController: vc)
@@ -20,7 +20,7 @@ final class MainTabBarViewController: UITabBarController {
         let nv2 = UINavigationController(rootViewController: vc2)
         setViewControllers([nv, nv2], animated: false)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
