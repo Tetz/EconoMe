@@ -10,36 +10,42 @@ import UIKit
 import SnapKit
 
 final class Nav2ViewController: UIViewController {
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
+    private lazy var container: UIView = {
+        let container = UIView()
+        container.backgroundColor = UIColor.green
+
+        let button = UIButton(type: .system)
+        container.addSubview(button)
+        button.setTitle("push", for: .normal)
+        button.tintColor = UIColor.white
+        button.backgroundColor = UIColor.blue
+        button.addTarget(self, action: #selector(onTappedPush(_:)), for: .touchUpInside)
+        button.snp.makeConstraints { make in
+            make.width.equalTo(200)
+            make.height.equalTo(40)
+            make.center.equalTo(container)
+        }
+        return container
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Nav2"
-        view = tableView
+        navigationItem.title = "Navigation 2"
+        self.view.addSubview(container)
+        container.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-}
 
-extension Nav2ViewController: UITableViewDelegate {
-
-}
-
-extension Nav2ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+    @objc func onTappedPush(_ sender: UIButton) {
+        print(sender)
+        let vc = SecondViewController(titleName: "Second View")
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

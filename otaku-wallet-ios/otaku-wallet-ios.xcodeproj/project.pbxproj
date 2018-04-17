@@ -70,6 +70,7 @@
 		13114671207F91AE00D956D8 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		13114673207F926700D956D8 /* Nav2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nav2ViewController.swift; sourceTree = "<group>"; };
 		13114675207F92FE00D956D8 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		133978E620865A2D008A4967 /* SwiftIconFont */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftIconFont; path = Carthage/Checkouts/SwiftIconFont; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,7 @@
 				13114651207F8A0700D956D8 /* otaku-wallet-iosTests */,
 				1311465C207F8A0700D956D8 /* otaku-wallet-iosUITests */,
 				1311463B207F8A0600D956D8 /* Products */,
+				133978E520865A2D008A4967 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +153,14 @@
 				1311465F207F8A0700D956D8 /* Info.plist */,
 			);
 			path = "otaku-wallet-iosUITests";
+			sourceTree = "<group>";
+		};
+		133978E520865A2D008A4967 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				133978E620865A2D008A4967 /* SwiftIconFont */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -1,18 +1,11 @@
-//
-//  Nav1ViewController.swift
-//  otaku-wallet-ios
-//
-//  Created by Tetsuro Takemoto on 2018/04/12.
-//  Copyright © 2018 Tetsuro Takemoto. All rights reserved.
-//
-
 import UIKit
 import SnapKit
+import SwiftIconFont
 
 final class Nav1ViewController: UIViewController {
     private lazy var container: UIView = {
         let container = UIView()
-        container.backgroundColor = UIColor.gray
+        container.backgroundColor = UIColor.cyan
 
         let button = UIButton(type: .system)
         container.addSubview(button)
@@ -25,13 +18,14 @@ final class Nav1ViewController: UIViewController {
             make.height.equalTo(40)
             make.center.equalTo(container)
         }
+
         return container
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Navigation 1"
+        navigationItem.title = "Otaku Wallet"
         self.view.addSubview(container)
         container.snp.makeConstraints { make in
             make.edges.equalToSuperview()
