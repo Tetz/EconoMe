@@ -45,7 +45,7 @@ final class Nav1ViewController: UIViewController {
 
     @objc func onTappedPush(_ sender: UIButton) {
         print(sender)
-        let vc = SecondViewController(titleName: "second")
+        let vc = SecondViewController(titleName: "Second View")
         navigationController?.pushViewController(vc, animated: true)
     }
 }
