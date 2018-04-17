@@ -31,7 +31,7 @@ final class Nav1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Nav1"
+        navigationItem.title = "Navigation1 hoge"
         self.view.addSubview(container)
         container.snp.makeConstraints { make in
             make.edges.equalToSuperview()

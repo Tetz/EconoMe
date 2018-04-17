@@ -13,10 +13,10 @@ final class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         let vc = Nav1ViewController()
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 1)
         let nv = UINavigationController(rootViewController: vc)
         let vc2 = Nav2ViewController()
-        vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
+        vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 2)
         let nv2 = UINavigationController(rootViewController: vc2)
         setViewControllers([nv, nv2], animated: false)
     }
