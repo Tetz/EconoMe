@@ -1,0 +1,9 @@
+#!/bin/sh
+xcodebuild \
+	-project otaku-wallet-ios.xcodeproj \
+        -target "otaku-wallet-ios" \
+	-configuration "Debug" \
+	-sdk iphonesimulator
+
+xcrun simctl install booted /Users/t/Code/EconoMe/otaku-wallet-ios/build/Debug-iphonesimulator/otaku-wallet-ios.app
+xcrun simctl launch C7E1F80F-0865-4F4D-9654-AC18C78F7670 com.ineeza.otaku-wallet-ios
