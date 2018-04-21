@@ -19,6 +19,8 @@
 		13114672207F91AE00D956D8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13114671207F91AE00D956D8 /* SecondViewController.swift */; };
 		13114674207F926700D956D8 /* Nav2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13114673207F926700D956D8 /* Nav2ViewController.swift */; };
 		13114676207F92FE00D956D8 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13114675207F92FE00D956D8 /* MainTabBarViewController.swift */; };
+		133978EA208AFCF0008A4967 /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133978E8208AFB00008A4967 /* SwiftIconFont.framework */; };
+		133978EB208AFCF0008A4967 /* SwiftIconFont.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 133978E8208AFB00008A4967 /* SwiftIconFont.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				133978EB208AFCF0008A4967 /* SwiftIconFont.framework in Embed Frameworks */,
 				1311466D207F8B3000D956D8 /* SnapKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -71,6 +74,7 @@
 		13114673207F926700D956D8 /* Nav2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nav2ViewController.swift; sourceTree = "<group>"; };
 		13114675207F92FE00D956D8 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		133978E620865A2D008A4967 /* SwiftIconFont */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftIconFont; path = Carthage/Checkouts/SwiftIconFont; sourceTree = "<group>"; };
+		133978E8208AFB00008A4967 /* SwiftIconFont.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftIconFont.framework; path = Carthage/Build/iOS/SwiftIconFont.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				133978EA208AFCF0008A4967 /* SwiftIconFont.framework in Frameworks */,
 				1311466C207F8B3000D956D8 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +163,7 @@
 		133978E520865A2D008A4967 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				133978E8208AFB00008A4967 /* SwiftIconFont.framework */,
 				133978E620865A2D008A4967 /* SwiftIconFont */,
 			);
 			name = Frameworks;

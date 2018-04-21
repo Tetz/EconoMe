@@ -16,10 +16,12 @@ final class SecondViewController: UIViewController {
         let container = UIView()
         container.backgroundColor = UIColor.yellow
 
-        let logo = UIImageView(image: UIImage(named: "otakucoin"))
+        let logo: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        logo.setIcon(from: .Octicon, code: "octoface", textColor: .black, backgroundColor: .clear, size: nil)
+
         container.addSubview(logo)
         logo.backgroundColor = UIColor.white
-        logo.snp_makeConstraints { make in
+        logo.snp.makeConstraints { make in
             make.width.equalTo(300)
             make.height.equalTo(300)
             make.center.equalTo(container)
