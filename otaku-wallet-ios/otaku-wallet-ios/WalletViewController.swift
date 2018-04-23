@@ -14,19 +14,7 @@ final class WalletViewController: UIViewController {
 
     private lazy var container: UIView = {
         let container = UIView()
-        
-        container.backgroundColor = UIColor.yellow
-        
-        let logo: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        logo.setIcon(from: .FontAwesome, code: "creditcard", textColor: .blue, backgroundColor: .clear, size: nil)
-        
-        container.addSubview(logo)
-        logo.backgroundColor = UIColor.white
-        logo.snp.makeConstraints { make in
-            make.width.equalTo(300)
-            make.height.equalTo(300)
-            make.center.equalTo(container)
-        }
+        container.backgroundColor = UIColor.white
 
         return container
     }()
@@ -39,6 +27,48 @@ final class WalletViewController: UIViewController {
         container.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+
+        let walletcard = UIView()
+        walletcard.backgroundColor = UIColor.white
+        container.addSubview(walletcard)
+        walletcard.snp.makeConstraints { make in
+            make.width.height.equalTo(self.view.frame.size.height - 98)
+            make.width.width.equalTo(container)
+            make.centerX.equalTo(container)
+            make.top.equalTo(22)
+        }
+        
+        let sendButton = UIButton(type: .system)
+        container.addSubview(sendButton)
+        sendButton.setTitle("send", for: .normal)
+        sendButton.tintColor = UIColor.white
+        sendButton.backgroundColor = UIColor.blue
+        sendButton.titleLabel?.font =  UIFont.systemFont(ofSize: 32)
+        sendButton.addTarget(self, action: #selector(onTappedPush(_:)), for: .touchUpInside)
+        
+        let receiveButton = UIButton(type: .system)
+        container.addSubview(receiveButton)
+        receiveButton.setTitle("receive", for: .normal)
+        receiveButton.tintColor = UIColor.white
+        receiveButton.backgroundColor = UIColor.blue
+        receiveButton.titleLabel?.font =  UIFont.systemFont(ofSize: 32)
+        receiveButton.addTarget(self, action: #selector(onTappedPush(_:)), for: .touchUpInside)
+        
+
+        sendButton.backgroundColor = UIColor.red
+        sendButton.snp.makeConstraints { make in
+            make.width.width.equalTo(self.view.frame.size.width/2 - 15)
+            make.left.equalTo(walletcard).offset(10)
+            make.bottom.equalTo(walletcard)
+        }
+
+        receiveButton.backgroundColor = UIColor.blue
+        receiveButton.snp.makeConstraints { make in
+            make.width.width.equalTo(self.view.frame.size.width/2 - 15)
+            make.left.equalTo(sendButton.snp.right).offset(10)
+            make.bottom.equalTo(walletcard)
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
