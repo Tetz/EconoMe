@@ -17,7 +17,7 @@ final class SecondViewController: UIViewController {
         container.backgroundColor = UIColor.yellow
 
         let logo: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        logo.setIcon(from: .Octicon, code: "octoface", textColor: .black, backgroundColor: .clear, size: nil)
+        logo.setIcon(from: .FontAwesome, code: "creditcard", textColor: .blue, backgroundColor: .clear, size: nil)
 
         container.addSubview(logo)
         logo.backgroundColor = UIColor.white

@@ -5,7 +5,7 @@ import SwiftIconFont
 final class Nav1ViewController: UIViewController {
     private lazy var container: UIView = {
         let container = UIView()
-        container.backgroundColor = UIColor.cyan
+        container.backgroundColor = UIColor.white
 
         let button = UIButton(type: .system)
         container.addSubview(button)

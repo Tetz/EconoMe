@@ -1,4 +1,5 @@
 import UIKit
+import SwiftIconFont
 
 final class MainTabBarViewController: UITabBarController {
 
@@ -7,15 +8,18 @@ final class MainTabBarViewController: UITabBarController {
         self.removeTabbarItemsText()
 
         let vc = Nav1ViewController()
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 1)
+        let walletLogo = UIImage(from: .FontAwesome, code: "creditcard", textColor: .black, backgroundColor: .clear, size: CGSize(width: 50, height: 50))
+        vc.tabBarItem = UITabBarItem(title: "wallet", image: walletLogo, tag: 1)
         let nv = UINavigationController(rootViewController: vc)
 
         let vc2 = Nav2ViewController()
-        vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 2)
+        let airdropLogo = UIImage(from: .FontAwesome, code: "gift", textColor: .black, backgroundColor: .clear, size: CGSize(width: 50, height: 50))
+        vc2.tabBarItem = UITabBarItem(title: "airdrop", image: airdropLogo, tag: 2)
         let nv2 = UINavigationController(rootViewController: vc2)
 
         let vc3 = Nav2ViewController()
-        vc3.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 3)
+        let settingLogo = UIImage(from: .FontAwesome, code: "cog", textColor: .black, backgroundColor: .clear, size: CGSize(width: 50, height: 50))
+        vc3.tabBarItem = UITabBarItem(title: "setting", image: settingLogo, tag: 3)
         let nv3 = UINavigationController(rootViewController: vc3)
 
         setViewControllers([nv, nv2, nv3], animated: false)
