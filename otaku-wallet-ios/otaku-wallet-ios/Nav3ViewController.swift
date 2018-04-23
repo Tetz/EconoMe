@@ -1,10 +1,10 @@
 import UIKit
 import SnapKit
 
-final class Nav1ViewController: UIViewController {
+final class Nav3ViewController: UIViewController {
     private lazy var container: UIView = {
         let container = UIView()
-        container.backgroundColor = UIColor.white
+        container.backgroundColor = UIColor.cyan
 
         let button = UIButton(type: .system)
         container.addSubview(button)
@@ -24,7 +24,7 @@ final class Nav1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Otaku Wallet"
+        navigationItem.title = "Setting"
         self.view.addSubview(container)
         container.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -38,7 +38,7 @@ final class Nav1ViewController: UIViewController {
 
     @objc func onTappedPush(_ sender: UIButton) {
         print(sender)
-        let vc = SecondViewController(titleName: "Details")
+        let vc = SettingViewController(titleName: "Details")
         navigationController?.pushViewController(vc, animated: true)
     }
 }

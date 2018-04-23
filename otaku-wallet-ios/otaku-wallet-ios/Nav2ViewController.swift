@@ -1,11 +1,3 @@
-//
-//  Nav2ViewController.swift
-//  otaku-wallet-ios
-//
-//  Created by Tetsuro Takemoto on 2018/04/12.
-//  Copyright © 2018 Tetsuro Takemoto. All rights reserved.
-//
-
 import UIKit
 import SnapKit
 
@@ -31,7 +23,7 @@ final class Nav2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Navigation 2"
+        navigationItem.title = "Airdrop"
         self.view.addSubview(container)
         container.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -45,7 +37,7 @@ final class Nav2ViewController: UIViewController {
 
     @objc func onTappedPush(_ sender: UIButton) {
         print(sender)
-        let vc = SecondViewController(titleName: "Second View")
+        let vc = SecondViewController(titleName: "Details")
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -7,18 +7,18 @@ final class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
         self.removeTabbarItemsText()
 
-        let vc = Nav1ViewController()
-        let walletLogo = UIImage(from: .FontAwesome, code: "creditcard", textColor: .black, backgroundColor: .clear, size: CGSize(width: 50, height: 50))
+        let vc = WalletViewController(titleName: "Otaku Wallet")
+        let walletLogo = UIImage(from: .FontAwesome, code: "creditcard", backgroundColor: .clear, size: CGSize(width: 50, height: 50))
         vc.tabBarItem = UITabBarItem(title: "wallet", image: walletLogo, tag: 1)
         let nv = UINavigationController(rootViewController: vc)
 
-        let vc2 = Nav2ViewController()
-        let airdropLogo = UIImage(from: .FontAwesome, code: "gift", textColor: .black, backgroundColor: .clear, size: CGSize(width: 50, height: 50))
+        let vc2 = AirdropViewController(titleName: "Airdrop")
+        let airdropLogo = UIImage(from: .FontAwesome, code: "gift", backgroundColor: .clear, size: CGSize(width: 50, height: 50))
         vc2.tabBarItem = UITabBarItem(title: "airdrop", image: airdropLogo, tag: 2)
         let nv2 = UINavigationController(rootViewController: vc2)
 
-        let vc3 = Nav2ViewController()
-        let settingLogo = UIImage(from: .FontAwesome, code: "cog", textColor: .black, backgroundColor: .clear, size: CGSize(width: 50, height: 50))
+        let vc3 = SettingViewController(titleName: "Setting")
+        let settingLogo = UIImage(from: .FontAwesome, code: "cog", backgroundColor: .clear, size: CGSize(width: 50, height: 50))
         vc3.tabBarItem = UITabBarItem(title: "setting", image: settingLogo, tag: 3)
         let nv3 = UINavigationController(rootViewController: vc3)
 
