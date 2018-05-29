@@ -2,7 +2,7 @@ import UIKit
 import SnapKit
 import SwiftIconFont
 
-final class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class AirdropViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let statusBarHeight = UIApplication.shared.statusBarFrame.height
     let titleName: String
@@ -45,17 +45,17 @@ final class SettingViewController: UIViewController, UITableViewDelegate, UITabl
         
         switch idx {
         case 1:
-            cell.textLabel?.text = "Push Notification"
+            cell.textLabel?.text = "Airdrop 1"
         case 2:
-            cell.textLabel?.text = "Tutorial"
+            cell.textLabel?.text = "Airdrop 2"
         case 3:
-            cell.textLabel?.text = "FAQ"
+            cell.textLabel?.text = "Airdrop 3"
         case 4:
-            cell.textLabel?.text = "Contact us"
+            cell.textLabel?.text = "Airdrop 4"
         case 5:
-            cell.textLabel?.text = "Terms of service"
+            cell.textLabel?.text = "Airdrop 5"
         case 6:
-            cell.textLabel?.text = "About EconoMe Wallet"
+            cell.textLabel?.text = "Airdrop 6"
         default:
             print("Error: index is not match")
         }

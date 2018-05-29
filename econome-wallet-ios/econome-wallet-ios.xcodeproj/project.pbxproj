@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		135027E020BD94FC0039FC24 /* InfoViewController.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */; };
+		135027E220BDAA410039FC24 /* AirdropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027E120BDAA410039FC24 /* AirdropViewController.swift */; };
+		135027E420BDAA720039FC24 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027E320BDAA720039FC24 /* TransactionViewController.swift */; };
 		13E98D3A20BD7FF500E50EC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D3920BD7FF500E50EC8 /* AppDelegate.swift */; };
 		13E98D3C20BD7FF500E50EC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D3B20BD7FF500E50EC8 /* ViewController.swift */; };
 		13E98D4120BD7FF700E50EC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E98D4020BD7FF700E50EC8 /* Assets.xcassets */; };
@@ -67,6 +69,8 @@
 
 /* Begin PBXFileReference section */
 		135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InfoViewController.swift .swift"; sourceTree = "<group>"; };
+		135027E120BDAA410039FC24 /* AirdropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirdropViewController.swift; sourceTree = "<group>"; };
+		135027E320BDAA720039FC24 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		13E98D3620BD7FF500E50EC8 /* econome-wallet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "econome-wallet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E98D3920BD7FF500E50EC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13E98D3B20BD7FF500E50EC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				13E98D7C20BD839100E50EC8 /* WalletViewController.swift .swift */,
 				13E98D7E20BD83B900E50EC8 /* SettingViewController.swift .swift */,
 				135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */,
+				135027E120BDAA410039FC24 /* AirdropViewController.swift */,
+				135027E320BDAA720039FC24 /* TransactionViewController.swift */,
 			);
 			path = "econome-wallet-ios";
 			sourceTree = "<group>";
@@ -325,8 +331,10 @@
 				13E98D7B20BD836100E50EC8 /* MainTabBarViewController.swift in Sources */,
 				13E98D7D20BD839100E50EC8 /* WalletViewController.swift .swift in Sources */,
 				135027E020BD94FC0039FC24 /* InfoViewController.swift .swift in Sources */,
+				135027E420BDAA720039FC24 /* TransactionViewController.swift in Sources */,
 				13E98D7F20BD83B900E50EC8 /* SettingViewController.swift .swift in Sources */,
 				13E98D3C20BD7FF500E50EC8 /* ViewController.swift in Sources */,
+				135027E220BDAA410039FC24 /* AirdropViewController.swift in Sources */,
 				13E98D3A20BD7FF500E50EC8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

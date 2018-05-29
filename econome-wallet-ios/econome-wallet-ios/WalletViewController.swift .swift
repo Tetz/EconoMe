@@ -30,7 +30,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         // Navigation Bar
         navigationItem.title = titleName
-        let infoImg = UIImage(from: .fontAwesome, code: "envelopeo", backgroundColor: .clear, size: CGSize(width: 50, height: 50))
+        let infoImg = UIImage(from: .fontAwesome, code: "envelopeo", backgroundColor: .clear, size: CGSize(width: 30, height: 30))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: infoImg, style: .plain, target: self, action: #selector(onTappedRightBarButton))
         
