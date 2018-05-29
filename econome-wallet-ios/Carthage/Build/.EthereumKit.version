@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "1.2.0",
+  "iOS" : [
+    {
+      "name" : "EthereumKit",
+      "hash" : "d2f64ad1db119d5f053aa2a9f10b1705c5087a84cb524f2e5f4656980a2929de"
+    }
+  ]
+}

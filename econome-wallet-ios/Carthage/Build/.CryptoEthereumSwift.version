@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "1.0.0",
+  "iOS" : [
+    {
+      "name" : "CryptoEthereumSwift",
+      "hash" : "4ace2844cc157c57f6f9d06b370631fd1fbb14df998269608d712090f26318ed"
+    }
+  ]
+}
