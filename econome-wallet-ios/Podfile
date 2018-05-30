@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'econome-wallet-ios' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'Geth', '1.8.6'
+
+  # Pods for econome-wallet-ios
+
+  target 'econome-wallet-iosTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'econome-wallet-iosUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

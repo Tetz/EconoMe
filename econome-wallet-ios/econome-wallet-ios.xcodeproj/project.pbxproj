@@ -29,12 +29,12 @@
 		13E98D7220BD82D100E50EC8 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13E98D6920BD82D000E50EC8 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13E98D7320BD82D100E50EC8 /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E98D6A20BD82D000E50EC8 /* SwiftIconFont.framework */; };
 		13E98D7420BD82D100E50EC8 /* SwiftIconFont.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13E98D6A20BD82D000E50EC8 /* SwiftIconFont.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		13E98D7520BD82D100E50EC8 /* CryptoEthereumSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E98D6B20BD82D000E50EC8 /* CryptoEthereumSwift.framework */; };
-		13E98D7620BD82D100E50EC8 /* CryptoEthereumSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13E98D6B20BD82D000E50EC8 /* CryptoEthereumSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13E98D7B20BD836100E50EC8 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D7A20BD836100E50EC8 /* MainTabBarViewController.swift */; };
 		13E98D7D20BD839100E50EC8 /* WalletViewController.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D7C20BD839100E50EC8 /* WalletViewController.swift .swift */; };
 		13E98D7F20BD83B900E50EC8 /* SettingViewController.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D7E20BD83B900E50EC8 /* SettingViewController.swift .swift */; };
 		13E98D8220BD886600E50EC8 /* UIImage+Extention.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D8120BD886600E50EC8 /* UIImage+Extention.swift .swift */; };
+		2BDAFDC3E37273A3F93057AC /* Pods_econome_wallet_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F9378BA06CF7D32A7EF960 /* Pods_econome_wallet_iosUITests.framework */; };
+		CD5CBB3C79AE352790460D40 /* Pods_econome_wallet_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A84CD3215D6BFDC6CC9B0 /* Pods_econome_wallet_iosTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,6 @@
 				13E98D7220BD82D100E50EC8 /* CryptoSwift.framework in Embed Frameworks */,
 				13E98D7020BD82D100E50EC8 /* KeychainSwift.framework in Embed Frameworks */,
 				13E98D6E20BD82D100E50EC8 /* SnapKit.framework in Embed Frameworks */,
-				13E98D7620BD82D100E50EC8 /* CryptoEthereumSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +81,7 @@
 		135027EC20BE81260039FC24 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		135027ED20BE81260039FC24 /* JSONRPCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONRPCKit.framework; path = Carthage/Build/iOS/JSONRPCKit.framework; sourceTree = "<group>"; };
 		135027F220BE93770039FC24 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		1394D72B20BEF49E001252B8 /* Geth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Geth.framework; path = Pods/Geth/Frameworks/Geth.framework; sourceTree = "<group>"; };
 		13E98D3620BD7FF500E50EC8 /* econome-wallet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "econome-wallet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E98D3920BD7FF500E50EC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13E98D4020BD7FF700E50EC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +103,15 @@
 		13E98D7C20BD839100E50EC8 /* WalletViewController.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletViewController.swift .swift"; sourceTree = "<group>"; };
 		13E98D7E20BD83B900E50EC8 /* SettingViewController.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingViewController.swift .swift"; sourceTree = "<group>"; };
 		13E98D8120BD886600E50EC8 /* UIImage+Extention.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extention.swift .swift"; sourceTree = "<group>"; };
+		2B3A84CD3215D6BFDC6CC9B0 /* Pods_econome_wallet_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_econome_wallet_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		358CABFCBAE905D57E69220E /* Pods-econome-wallet-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-ios/Pods-econome-wallet-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		3E8B695B82E4B488158B1807 /* Pods-econome-wallet-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosUITests/Pods-econome-wallet-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		49F9378BA06CF7D32A7EF960 /* Pods_econome_wallet_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_econome_wallet_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF58E6CC514F632D53C0B21 /* Pods-econome-wallet-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosTests/Pods-econome-wallet-iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE8C360178DCE3C6D3EF6250 /* Pods-econome-wallet-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosUITests/Pods-econome-wallet-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D00E25240DC3FF9E12A24148 /* Pods-econome-wallet-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosTests/Pods-econome-wallet-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA08CBDE761FC1494AD36A58 /* Pods-econome-wallet-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-ios/Pods-econome-wallet-ios.release.xcconfig"; sourceTree = "<group>"; };
+		F155B906D175B0D3CA2F83E9 /* Pods_econome_wallet_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_econome_wallet_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +126,6 @@
 				13E98D7120BD82D100E50EC8 /* CryptoSwift.framework in Frameworks */,
 				13E98D6F20BD82D100E50EC8 /* KeychainSwift.framework in Frameworks */,
 				13E98D6D20BD82D000E50EC8 /* SnapKit.framework in Frameworks */,
-				13E98D7520BD82D100E50EC8 /* CryptoEthereumSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5CBB3C79AE352790460D40 /* Pods_econome_wallet_iosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BDAFDC3E37273A3F93057AC /* Pods_econome_wallet_iosUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +171,7 @@
 		13E98D2D20BD7FF500E50EC8 = {
 			isa = PBXGroup;
 			children = (
+				1394D72B20BEF49E001252B8 /* Geth.framework */,
 				135027F220BE93770039FC24 /* Result.framework */,
 				135027EC20BE81260039FC24 /* APIKit.framework */,
 				135027ED20BE81260039FC24 /* JSONRPCKit.framework */,
@@ -174,6 +185,8 @@
 				13E98D4D20BD7FF700E50EC8 /* econome-wallet-iosTests */,
 				13E98D5820BD7FF700E50EC8 /* econome-wallet-iosUITests */,
 				13E98D3720BD7FF500E50EC8 /* Products */,
+				53D6D649ED55C75C67C3E0BE /* Pods */,
+				4FB0019FCC10CF80CE55BBA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,6 +240,29 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		4FB0019FCC10CF80CE55BBA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F155B906D175B0D3CA2F83E9 /* Pods_econome_wallet_ios.framework */,
+				2B3A84CD3215D6BFDC6CC9B0 /* Pods_econome_wallet_iosTests.framework */,
+				49F9378BA06CF7D32A7EF960 /* Pods_econome_wallet_iosUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53D6D649ED55C75C67C3E0BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				358CABFCBAE905D57E69220E /* Pods-econome-wallet-ios.debug.xcconfig */,
+				DA08CBDE761FC1494AD36A58 /* Pods-econome-wallet-ios.release.xcconfig */,
+				D00E25240DC3FF9E12A24148 /* Pods-econome-wallet-iosTests.debug.xcconfig */,
+				5FF58E6CC514F632D53C0B21 /* Pods-econome-wallet-iosTests.release.xcconfig */,
+				3E8B695B82E4B488158B1807 /* Pods-econome-wallet-iosUITests.debug.xcconfig */,
+				AE8C360178DCE3C6D3EF6250 /* Pods-econome-wallet-iosUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,10 +270,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13E98D5E20BD7FF700E50EC8 /* Build configuration list for PBXNativeTarget "econome-wallet-ios" */;
 			buildPhases = (
+				46EAA93A2079C99887D034D1 /* [CP] Check Pods Manifest.lock */,
 				13E98D3220BD7FF500E50EC8 /* Sources */,
 				13E98D3320BD7FF500E50EC8 /* Frameworks */,
 				13E98D3420BD7FF500E50EC8 /* Resources */,
 				13E98D7920BD82D100E50EC8 /* Embed Frameworks */,
+				D717E80DF9083842669608BB /* [CP] Embed Pods Frameworks */,
+				EF78B39117782B9641B04530 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,9 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13E98D6120BD7FF700E50EC8 /* Build configuration list for PBXNativeTarget "econome-wallet-iosTests" */;
 			buildPhases = (
+				416D547D2CA6EA23767F5D6F /* [CP] Check Pods Manifest.lock */,
 				13E98D4620BD7FF700E50EC8 /* Sources */,
 				13E98D4720BD7FF700E50EC8 /* Frameworks */,
 				13E98D4820BD7FF700E50EC8 /* Resources */,
+				B5310C31B8553341BD292354 /* [CP] Embed Pods Frameworks */,
+				1BC5866DB8961457CC700B80 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,9 +312,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13E98D6420BD7FF700E50EC8 /* Build configuration list for PBXNativeTarget "econome-wallet-iosUITests" */;
 			buildPhases = (
+				867065D08BED446C7F1024CC /* [CP] Check Pods Manifest.lock */,
 				13E98D5120BD7FF700E50EC8 /* Sources */,
 				13E98D5220BD7FF700E50EC8 /* Frameworks */,
 				13E98D5320BD7FF700E50EC8 /* Resources */,
+				653C3B44F175EDAF2EE82E15 /* [CP] Embed Pods Frameworks */,
+				3E6F44DB50524D03AB44B448 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -352,6 +397,153 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BC5866DB8961457CC700B80 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-econome-wallet-iosTests/Pods-econome-wallet-iosTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E6F44DB50524D03AB44B448 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-econome-wallet-iosUITests/Pods-econome-wallet-iosUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		416D547D2CA6EA23767F5D6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-econome-wallet-iosTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46EAA93A2079C99887D034D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-econome-wallet-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		653C3B44F175EDAF2EE82E15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-econome-wallet-iosUITests/Pods-econome-wallet-iosUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		867065D08BED446C7F1024CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-econome-wallet-iosUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5310C31B8553341BD292354 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-econome-wallet-iosTests/Pods-econome-wallet-iosTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D717E80DF9083842669608BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-econome-wallet-ios/Pods-econome-wallet-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF78B39117782B9641B04530 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-econome-wallet-ios/Pods-econome-wallet-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		13E98D3220BD7FF500E50EC8 /* Sources */ = {
@@ -528,6 +720,7 @@
 		};
 		13E98D5F20BD7FF700E50EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 358CABFCBAE905D57E69220E /* Pods-econome-wallet-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +728,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Pods/Geth/Frameworks",
 				);
 				INFOPLIST_FILE = "econome-wallet-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -550,6 +744,7 @@
 		};
 		13E98D6020BD7FF700E50EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA08CBDE761FC1494AD36A58 /* Pods-econome-wallet-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -557,6 +752,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Pods/Geth/Frameworks",
 				);
 				INFOPLIST_FILE = "econome-wallet-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -572,6 +768,7 @@
 		};
 		13E98D6220BD7FF700E50EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D00E25240DC3FF9E12A24148 /* Pods-econome-wallet-iosTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -593,6 +790,7 @@
 		};
 		13E98D6320BD7FF700E50EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FF58E6CC514F632D53C0B21 /* Pods-econome-wallet-iosTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -614,6 +812,7 @@
 		};
 		13E98D6520BD7FF700E50EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E8B695B82E4B488158B1807 /* Pods-econome-wallet-iosUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -634,6 +833,7 @@
 		};
 		13E98D6620BD7FF700E50EC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE8C360178DCE3C6D3EF6250 /* Pods-econome-wallet-iosUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

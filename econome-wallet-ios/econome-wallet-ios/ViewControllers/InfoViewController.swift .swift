@@ -5,6 +5,7 @@ import KeychainSwift
 import Foundation
 import APIKit
 import JSONRPCKit
+import Geth
 
 struct EthServiceRequest<Batch: JSONRPCKit.Batch>: APIKit.Request {
     let batch: Batch
@@ -59,6 +60,28 @@ struct EthGetBalance: JSONRPCKit.Request {
     }
 }
 
+struct EthNewAccount: JSONRPCKit.Request {
+    typealias Response = String
+    
+    let params: String
+    
+    var method: String {
+        return "personal_newAccount"
+    }
+    
+    var parameters: Any? {
+        return [params]
+    }
+    
+    func response(from resultObject: Any) throws -> Response {
+        if let response = resultObject as? Response {
+            return response
+        } else {
+            throw CastError(actualValue: resultObject, expectedType: Response.self)
+        }
+    }
+}
+
 final class InfoViewController: UIViewController {
     let titleName: String
     init(titleName: String) {
@@ -87,15 +110,28 @@ final class InfoViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        // JSON RPC
+        // Keysotre
+        let dataDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let keyStorePath = dataDir + "/keystore"
+        print("keyStorePath: \(keyStorePath)")
+        
+        let keyStoreManager = GethNewKeyStore(keyStorePath, GethLightScryptN, GethLightScryptP)
+        let account = try! keyStoreManager?.newAccount("password")
+        let address = account?.getAddress().getHex()
+        print("address: \(address!)")
+        
+        let url = account?.getURL()
+        print("url: \(url!)")
+        
+        // JSON RPC : GetBalance
         let request = EthGetBalance(
-            address: "0x5F5FAb2be7F41624CF841A393300cCc651674Dc5",
+            address: address!,
             quantity: "latest"
         )
-        
+
         let batch = batchFactory.create(request)
         let httpRequest = EthServiceRequest(batch: batch)
-        
+
         Session.send(httpRequest) { [weak self] result in
             switch result {
             case .success(let result):
