@@ -11,7 +11,7 @@ struct EthServiceRequest<Batch: JSONRPCKit.Batch>: APIKit.Request {
     typealias Response = Batch.Responses
     
     var baseURL: URL {
-        return URL(string: "http://localhost:8545")!
+        return URL(string: "https://ropsten.infura.io/xyji23ngACpAtbvoO0MZ")!
     }
     
     var method: HTTPMethod {
@@ -87,9 +87,9 @@ final class InfoViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        // TODO JSON RPC
+        // JSON RPC
         let request = EthGetBalance(
-            address: "0x6da72d09af16e1e984d37cf2e68e5db557d687c3",
+            address: "0x5F5FAb2be7F41624CF841A393300cCc651674Dc5",
             quantity: "latest"
         )
         
@@ -100,7 +100,7 @@ final class InfoViewController: UIViewController {
             switch result {
             case .success(let result):
                 print("===== Success: JSONRPC =====")
-                print(result) // 0x5d002027f7eb3ba0000
+                print(result)
             case .failure(let error):
                 print("===== Error: JSONRPC =====")
                 print(error)
