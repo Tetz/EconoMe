@@ -11,7 +11,6 @@
 		135027E220BDAA410039FC24 /* AirdropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027E120BDAA410039FC24 /* AirdropViewController.swift */; };
 		135027E420BDAA720039FC24 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027E320BDAA720039FC24 /* TransactionViewController.swift */; };
 		13E98D3A20BD7FF500E50EC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D3920BD7FF500E50EC8 /* AppDelegate.swift */; };
-		13E98D3C20BD7FF500E50EC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D3B20BD7FF500E50EC8 /* ViewController.swift */; };
 		13E98D4120BD7FF700E50EC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E98D4020BD7FF700E50EC8 /* Assets.xcassets */; };
 		13E98D4420BD7FF700E50EC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E98D4220BD7FF700E50EC8 /* LaunchScreen.storyboard */; };
 		13E98D4F20BD7FF700E50EC8 /* econome_wallet_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D4E20BD7FF700E50EC8 /* econome_wallet_iosTests.swift */; };
@@ -73,7 +72,6 @@
 		135027E320BDAA720039FC24 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		13E98D3620BD7FF500E50EC8 /* econome-wallet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "econome-wallet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E98D3920BD7FF500E50EC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13E98D3B20BD7FF500E50EC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		13E98D4020BD7FF700E50EC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13E98D4320BD7FF700E50EC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13E98D4520BD7FF700E50EC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +123,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		135027EA20BE59ED0039FC24 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		135027EB20BE59F50039FC24 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				13E98D7A20BD836100E50EC8 /* MainTabBarViewController.swift */,
+				13E98D7C20BD839100E50EC8 /* WalletViewController.swift .swift */,
+				13E98D7E20BD83B900E50EC8 /* SettingViewController.swift .swift */,
+				135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */,
+				135027E120BDAA410039FC24 /* AirdropViewController.swift */,
+				135027E320BDAA720039FC24 /* TransactionViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		13E98D2D20BD7FF500E50EC8 = {
 			isa = PBXGroup;
 			children = (
@@ -154,18 +172,13 @@
 		13E98D3820BD7FF500E50EC8 /* econome-wallet-ios */ = {
 			isa = PBXGroup;
 			children = (
-				13E98D8020BD883C00E50EC8 /* Extention */,
+				135027EB20BE59F50039FC24 /* Controllers */,
+				135027EA20BE59ED0039FC24 /* Views */,
+				13E98D8020BD883C00E50EC8 /* Extentions */,
 				13E98D3920BD7FF500E50EC8 /* AppDelegate.swift */,
-				13E98D3B20BD7FF500E50EC8 /* ViewController.swift */,
 				13E98D4020BD7FF700E50EC8 /* Assets.xcassets */,
 				13E98D4220BD7FF700E50EC8 /* LaunchScreen.storyboard */,
 				13E98D4520BD7FF700E50EC8 /* Info.plist */,
-				13E98D7A20BD836100E50EC8 /* MainTabBarViewController.swift */,
-				13E98D7C20BD839100E50EC8 /* WalletViewController.swift .swift */,
-				13E98D7E20BD83B900E50EC8 /* SettingViewController.swift .swift */,
-				135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */,
-				135027E120BDAA410039FC24 /* AirdropViewController.swift */,
-				135027E320BDAA720039FC24 /* TransactionViewController.swift */,
 			);
 			path = "econome-wallet-ios";
 			sourceTree = "<group>";
@@ -188,12 +201,12 @@
 			path = "econome-wallet-iosUITests";
 			sourceTree = "<group>";
 		};
-		13E98D8020BD883C00E50EC8 /* Extention */ = {
+		13E98D8020BD883C00E50EC8 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
 				13E98D8120BD886600E50EC8 /* UIImage+Extention.swift .swift */,
 			);
-			path = Extention;
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,7 +346,6 @@
 				135027E020BD94FC0039FC24 /* InfoViewController.swift .swift in Sources */,
 				135027E420BDAA720039FC24 /* TransactionViewController.swift in Sources */,
 				13E98D7F20BD83B900E50EC8 /* SettingViewController.swift .swift in Sources */,
-				13E98D3C20BD7FF500E50EC8 /* ViewController.swift in Sources */,
 				135027E220BDAA410039FC24 /* AirdropViewController.swift in Sources */,
 				13E98D3A20BD7FF500E50EC8 /* AppDelegate.swift in Sources */,
 			);
