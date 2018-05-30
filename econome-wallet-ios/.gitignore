@@ -15,7 +15,7 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-econome-wallet-ios.xcodeproj/project.xcworkspace/xcuserdata/t.xcuserdatad/UserInterfaceState.xcuserstate
+econome-wallet-ios/econome-wallet-ios.xcodeproj/project.xcworkspace/xcuserdata/t.xcuserdatad/UserInterfaceState.xcuserstate
 
 # CocoaPod
 Pods/*

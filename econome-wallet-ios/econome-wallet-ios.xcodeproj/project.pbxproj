@@ -10,6 +10,12 @@
 		135027E020BD94FC0039FC24 /* InfoViewController.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */; };
 		135027E220BDAA410039FC24 /* AirdropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027E120BDAA410039FC24 /* AirdropViewController.swift */; };
 		135027E420BDAA720039FC24 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027E320BDAA720039FC24 /* TransactionViewController.swift */; };
+		135027EE20BE81260039FC24 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135027EC20BE81260039FC24 /* APIKit.framework */; };
+		135027EF20BE81260039FC24 /* APIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 135027EC20BE81260039FC24 /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		135027F020BE81260039FC24 /* JSONRPCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135027ED20BE81260039FC24 /* JSONRPCKit.framework */; };
+		135027F120BE81260039FC24 /* JSONRPCKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 135027ED20BE81260039FC24 /* JSONRPCKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		135027F320BE93770039FC24 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135027F220BE93770039FC24 /* Result.framework */; };
+		135027F420BE93770039FC24 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 135027F220BE93770039FC24 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13E98D3A20BD7FF500E50EC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D3920BD7FF500E50EC8 /* AppDelegate.swift */; };
 		13E98D4120BD7FF700E50EC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E98D4020BD7FF700E50EC8 /* Assets.xcassets */; };
 		13E98D4420BD7FF700E50EC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E98D4220BD7FF700E50EC8 /* LaunchScreen.storyboard */; };
@@ -55,7 +61,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				135027F120BE81260039FC24 /* JSONRPCKit.framework in Embed Frameworks */,
+				135027EF20BE81260039FC24 /* APIKit.framework in Embed Frameworks */,
 				13E98D7420BD82D100E50EC8 /* SwiftIconFont.framework in Embed Frameworks */,
+				135027F420BE93770039FC24 /* Result.framework in Embed Frameworks */,
 				13E98D7220BD82D100E50EC8 /* CryptoSwift.framework in Embed Frameworks */,
 				13E98D7020BD82D100E50EC8 /* KeychainSwift.framework in Embed Frameworks */,
 				13E98D6E20BD82D100E50EC8 /* SnapKit.framework in Embed Frameworks */,
@@ -70,6 +79,9 @@
 		135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InfoViewController.swift .swift"; sourceTree = "<group>"; };
 		135027E120BDAA410039FC24 /* AirdropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirdropViewController.swift; sourceTree = "<group>"; };
 		135027E320BDAA720039FC24 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		135027EC20BE81260039FC24 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
+		135027ED20BE81260039FC24 /* JSONRPCKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONRPCKit.framework; path = Carthage/Build/iOS/JSONRPCKit.framework; sourceTree = "<group>"; };
+		135027F220BE93770039FC24 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		13E98D3620BD7FF500E50EC8 /* econome-wallet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "econome-wallet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E98D3920BD7FF500E50EC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13E98D4020BD7FF700E50EC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,7 +110,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				135027F020BE81260039FC24 /* JSONRPCKit.framework in Frameworks */,
+				135027EE20BE81260039FC24 /* APIKit.framework in Frameworks */,
 				13E98D7320BD82D100E50EC8 /* SwiftIconFont.framework in Frameworks */,
+				135027F320BE93770039FC24 /* Result.framework in Frameworks */,
 				13E98D7120BD82D100E50EC8 /* CryptoSwift.framework in Frameworks */,
 				13E98D6F20BD82D100E50EC8 /* KeychainSwift.framework in Frameworks */,
 				13E98D6D20BD82D000E50EC8 /* SnapKit.framework in Frameworks */,
@@ -130,7 +145,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		135027EB20BE59F50039FC24 /* Controllers */ = {
+		135027EB20BE59F50039FC24 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				13E98D7A20BD836100E50EC8 /* MainTabBarViewController.swift */,
@@ -140,12 +155,15 @@
 				135027E120BDAA410039FC24 /* AirdropViewController.swift */,
 				135027E320BDAA720039FC24 /* TransactionViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		13E98D2D20BD7FF500E50EC8 = {
 			isa = PBXGroup;
 			children = (
+				135027F220BE93770039FC24 /* Result.framework */,
+				135027EC20BE81260039FC24 /* APIKit.framework */,
+				135027ED20BE81260039FC24 /* JSONRPCKit.framework */,
 				13E98D6B20BD82D000E50EC8 /* CryptoEthereumSwift.framework */,
 				13E98D6920BD82D000E50EC8 /* CryptoSwift.framework */,
 				13E98D6C20BD82D000E50EC8 /* EthereumKit.framework */,
@@ -172,7 +190,7 @@
 		13E98D3820BD7FF500E50EC8 /* econome-wallet-ios */ = {
 			isa = PBXGroup;
 			children = (
-				135027EB20BE59F50039FC24 /* Controllers */,
+				135027EB20BE59F50039FC24 /* ViewControllers */,
 				135027EA20BE59ED0039FC24 /* Views */,
 				13E98D8020BD883C00E50EC8 /* Extentions */,
 				13E98D3920BD7FF500E50EC8 /* AppDelegate.swift */,
