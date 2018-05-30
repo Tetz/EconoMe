@@ -56,23 +56,23 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         
         switch idx {
         case 1:
-            cell.textLabel?.text = "Bounty 1"
+            cell.textLabel?.text = "Token 1"
         case 2:
-            cell.textLabel?.text = "Bounty 2"
+            cell.textLabel?.text = "Token 2"
         case 3:
-            cell.textLabel?.text = "Bounty 3"
+            cell.textLabel?.text = "Token 3"
         case 4:
-            cell.textLabel?.text = "Bounty 4"
+            cell.textLabel?.text = "Token 4"
         case 5:
-            cell.textLabel?.text = "Bounty 5"
+            cell.textLabel?.text = "Token 5"
         case 6:
-            cell.textLabel?.text = "Bounty 6"
+            cell.textLabel?.text = "Token 6"
         case 7:
-            cell.textLabel?.text = "Bounty 7"
+            cell.textLabel?.text = "Token 7"
         case 8:
-            cell.textLabel?.text = "Bounty 8"
+            cell.textLabel?.text = "Token 8"
         case 9:
-            cell.textLabel?.text = "Bounty 9"
+            cell.textLabel?.text = "Token 9"
         default:
             print("Error: index is not match")
         }
