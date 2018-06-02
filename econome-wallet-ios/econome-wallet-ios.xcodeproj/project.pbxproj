@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13353B3920C2774D00DE9FD7 /* EtherKeystore.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 13353B3820C2774D00DE9FD7 /* EtherKeystore.swift .swift */; };
+		13353B3C20C280D500DE9FD7 /* JsonRpcWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13353B3B20C280D500DE9FD7 /* JsonRpcWrapper.swift */; };
 		135027E020BD94FC0039FC24 /* InfoViewController.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */; };
 		135027E220BDAA410039FC24 /* AirdropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027E120BDAA410039FC24 /* AirdropViewController.swift */; };
 		135027E420BDAA720039FC24 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027E320BDAA720039FC24 /* TransactionViewController.swift */; };
@@ -75,6 +77,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		13353B3820C2774D00DE9FD7 /* EtherKeystore.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EtherKeystore.swift .swift"; sourceTree = "<group>"; };
+		13353B3B20C280D500DE9FD7 /* JsonRpcWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonRpcWrapper.swift; sourceTree = "<group>"; };
 		135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InfoViewController.swift .swift"; sourceTree = "<group>"; };
 		135027E120BDAA410039FC24 /* AirdropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirdropViewController.swift; sourceTree = "<group>"; };
 		135027E320BDAA720039FC24 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13353B3720C272BB00DE9FD7 /* GethJsonRpcWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				13353B3820C2774D00DE9FD7 /* EtherKeystore.swift .swift */,
+				13353B3B20C280D500DE9FD7 /* JsonRpcWrapper.swift */,
+			);
+			path = GethJsonRpcWrapper;
+			sourceTree = "<group>";
+		};
 		135027EA20BE59ED0039FC24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +216,7 @@
 		13E98D3820BD7FF500E50EC8 /* econome-wallet-ios */ = {
 			isa = PBXGroup;
 			children = (
+				13353B3720C272BB00DE9FD7 /* GethJsonRpcWrapper */,
 				135027EB20BE59F50039FC24 /* ViewControllers */,
 				135027EA20BE59ED0039FC24 /* Views */,
 				13E98D8020BD883C00E50EC8 /* Extentions */,
@@ -553,7 +567,9 @@
 				13E98D8220BD886600E50EC8 /* UIImage+Extention.swift .swift in Sources */,
 				13E98D7B20BD836100E50EC8 /* MainTabBarViewController.swift in Sources */,
 				13E98D7D20BD839100E50EC8 /* WalletViewController.swift .swift in Sources */,
+				13353B3C20C280D500DE9FD7 /* JsonRpcWrapper.swift in Sources */,
 				135027E020BD94FC0039FC24 /* InfoViewController.swift .swift in Sources */,
+				13353B3920C2774D00DE9FD7 /* EtherKeystore.swift .swift in Sources */,
 				135027E420BDAA720039FC24 /* TransactionViewController.swift in Sources */,
 				13E98D7F20BD83B900E50EC8 /* SettingViewController.swift .swift in Sources */,
 				135027E220BDAA410039FC24 /* AirdropViewController.swift in Sources */,
