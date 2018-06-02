@@ -3,8 +3,8 @@ import Geth
 
 final public class EtherKeystore {
     
-    let myEtherAddress: String = "com.otaku-coin.otaku-wallet-ios.myEtherAddress"
-    let myPrivateKey: String = "com.otaku-coin.otaku-wallet-ios.myPrivateKey"
+    let myEtherAddress: String = "myEtherAddress"
+    let myPrivateKey: String = "myPrivateKey"
     
     func createWalletIfNotExists () {
         // Keysotre
