@@ -8,7 +8,6 @@ import JSONRPCKit
 import Geth
 
 
-
 final class InfoViewController: UIViewController {
     let titleName: String
     init(titleName: String) {

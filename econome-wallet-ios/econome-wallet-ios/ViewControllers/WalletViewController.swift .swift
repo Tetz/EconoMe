@@ -56,7 +56,8 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         
         switch idx {
         case 1:
-            cell.textLabel?.text = "Token 1"
+            cell.textLabel?.text = "ETH"
+            cell.detailTextLabel?.text = "0.20331"
         case 2:
             cell.textLabel?.text = "Token 2"
         case 3:
@@ -98,11 +99,42 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let walletcontent = UIView()
+        let walletContent = UIView()
         let grayColor = UIColor(red: 236/255.0, green: 240/255.0, blue: 241/255.0, alpha: 1.0)
-        walletcontent.backgroundColor = grayColor
+        walletContent.backgroundColor = grayColor
         
-        return walletcontent
+        let walletCard:UIImage = UIImage(named:"WalletCard")!
+        let walletImageView = UIImageView(image:walletCard)
+        walletContent.addSubview(walletImageView)
+        walletImageView.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 365, height: 206))
+            make.centerX.equalTo(walletContent)
+            make.centerY.equalTo(walletContent)
+        }
+        
+        let walletAssetsAmount = UILabel()
+        walletImageView.addSubview(walletAssetsAmount)
+        walletAssetsAmount.text = "¥ 31238.55"
+        walletAssetsAmount.textColor = UIColor.white
+        walletAssetsAmount.font =  UIFont.systemFont(ofSize: 30.0)
+        walletAssetsAmount.snp.makeConstraints { make in
+            make.left.equalTo(walletImageView).offset(20)
+            make.centerY.equalTo(walletImageView)
+        }
+        
+        let keychain = KeychainSwift()
+        let address: String? = keychain.get(EtherKeystore().myEtherAddress)
+        let walletAddress = UILabel()
+        walletImageView.addSubview(walletAddress)
+        walletAddress.text = address
+        walletAddress.textColor = UIColor.white
+        walletAddress.font =  UIFont.systemFont(ofSize: 12.0)
+        walletAddress.snp.makeConstraints { make in
+            make.left.equalTo(walletImageView).offset(20)
+            make.centerY.equalTo(walletImageView).offset(50)
+        }
+        
+        return walletContent
     }
     
     @objc func onTappedRightBarButton(_ sender: UIButton) {

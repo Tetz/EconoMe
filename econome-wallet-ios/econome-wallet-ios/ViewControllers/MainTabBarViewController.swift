@@ -7,6 +7,11 @@ final class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
         self.removeTabbarItemsText()
         
+        // Load Wallet 
+        let etherKeystore: EtherKeystore = EtherKeystore()
+        etherKeystore.createWalletIfNotExists()
+        
+        // UI TabBarItem
         let airdropViewController = AirdropViewController(titleName: "Airdrop")
         let airdropImage = UIImage(from: .fontAwesome, code: "gift", backgroundColor: .clear, size: CGSize(width: 35, height: 35))
         airdropViewController.tabBarItem = UITabBarItem(title: "airdrop", image: airdropImage, tag: 1)
