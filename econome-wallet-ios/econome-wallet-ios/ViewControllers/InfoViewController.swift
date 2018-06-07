@@ -36,29 +36,35 @@ final class InfoViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        // Keysotre
-        let etherKeystore: EtherKeystore = EtherKeystore()
-        etherKeystore.createWalletIfNotExists()
-        
         // JSON RPC : GetBalance
-//        let request = EthGetBalance(
-//            address: address!,
+//        let request = Erc20TokenGetBalance(
+//            to: "0x169dbb74352a831c31ff099f066372c8f20da154",
+//            data: "0x70a082310000000000000000000000009ae1f5adfcc383b1c5a85e7f0bbad4b768e7d661",
 //            quantity: "latest"
 //        )
-//
-//        let batch = batchFactory.create(request)
-//        let httpRequest = EthServiceRequest(batch: batch)
-//
-//        Session.send(httpRequest) { [weak self] result in
-//            switch result {
-//            case .success(let result):
-//                print("===== Success: JSONRPC =====")
-//                print(result)
-//            case .failure(let error):
-//                print("===== Error: JSONRPC =====")
-//                print(error)
-//            }
-//        }
+        
+        let request = Erc20TokenGetBalance(
+            to: "0x169dbb74352a831c31ff099f066372c8f20da154",
+            data: "0x70a082310000000000000000000000009ae1f5adfcc383b1c5a85e7f0bbad4b768e7d661",
+            quantity: "latest"
+        )
+
+        let batch = batchFactory.create(request)
+        let httpRequest = EthServiceRequest(batch: batch)
+        
+        print(httpRequest)
+
+        Session.send(httpRequest) { result in
+            switch result {
+            case .success(let result):
+                print("===== Success: JSONRPC =====")
+                let decimalResult =  result
+                print(decimalResult)
+            case .failure(let error):
+                print("===== Error: JSONRPC =====")
+                print(error)
+            }
+        }
         
     }
     

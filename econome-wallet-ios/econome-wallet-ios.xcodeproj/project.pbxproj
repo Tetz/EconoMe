@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13353B3920C2774D00DE9FD7 /* EtherKeystore.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 13353B3820C2774D00DE9FD7 /* EtherKeystore.swift .swift */; };
+		13353B3920C2774D00DE9FD7 /* EtherKeystore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13353B3820C2774D00DE9FD7 /* EtherKeystore.swift */; };
 		13353B3C20C280D500DE9FD7 /* JsonRpcWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13353B3B20C280D500DE9FD7 /* JsonRpcWrapper.swift */; };
-		135027E020BD94FC0039FC24 /* InfoViewController.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */; };
+		135027E020BD94FC0039FC24 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027DF20BD94FC0039FC24 /* InfoViewController.swift */; };
 		135027E220BDAA410039FC24 /* AirdropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027E120BDAA410039FC24 /* AirdropViewController.swift */; };
 		135027E420BDAA720039FC24 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027E320BDAA720039FC24 /* TransactionViewController.swift */; };
 		135027EE20BE81260039FC24 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135027EC20BE81260039FC24 /* APIKit.framework */; };
@@ -32,9 +32,9 @@
 		13E98D7320BD82D100E50EC8 /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E98D6A20BD82D000E50EC8 /* SwiftIconFont.framework */; };
 		13E98D7420BD82D100E50EC8 /* SwiftIconFont.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13E98D6A20BD82D000E50EC8 /* SwiftIconFont.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13E98D7B20BD836100E50EC8 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D7A20BD836100E50EC8 /* MainTabBarViewController.swift */; };
-		13E98D7D20BD839100E50EC8 /* WalletViewController.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D7C20BD839100E50EC8 /* WalletViewController.swift .swift */; };
-		13E98D7F20BD83B900E50EC8 /* SettingViewController.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D7E20BD83B900E50EC8 /* SettingViewController.swift .swift */; };
-		13E98D8220BD886600E50EC8 /* UIImage+Extention.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D8120BD886600E50EC8 /* UIImage+Extention.swift .swift */; };
+		13E98D7D20BD839100E50EC8 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D7C20BD839100E50EC8 /* WalletViewController.swift */; };
+		13E98D7F20BD83B900E50EC8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D7E20BD83B900E50EC8 /* SettingViewController.swift */; };
+		13E98D8220BD886600E50EC8 /* UIImage+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D8120BD886600E50EC8 /* UIImage+Extention.swift */; };
 		2BDAFDC3E37273A3F93057AC /* Pods_econome_wallet_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F9378BA06CF7D32A7EF960 /* Pods_econome_wallet_iosUITests.framework */; };
 		CD5CBB3C79AE352790460D40 /* Pods_econome_wallet_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A84CD3215D6BFDC6CC9B0 /* Pods_econome_wallet_iosTests.framework */; };
 /* End PBXBuildFile section */
@@ -77,9 +77,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		13353B3820C2774D00DE9FD7 /* EtherKeystore.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EtherKeystore.swift .swift"; sourceTree = "<group>"; };
+		13353B3820C2774D00DE9FD7 /* EtherKeystore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherKeystore.swift; sourceTree = "<group>"; };
 		13353B3B20C280D500DE9FD7 /* JsonRpcWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonRpcWrapper.swift; sourceTree = "<group>"; };
-		135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InfoViewController.swift .swift"; sourceTree = "<group>"; };
+		135027DF20BD94FC0039FC24 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		135027E120BDAA410039FC24 /* AirdropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirdropViewController.swift; sourceTree = "<group>"; };
 		135027E320BDAA720039FC24 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		135027EC20BE81260039FC24 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
@@ -104,9 +104,9 @@
 		13E98D6B20BD82D000E50EC8 /* CryptoEthereumSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoEthereumSwift.framework; path = Carthage/Build/iOS/CryptoEthereumSwift.framework; sourceTree = "<group>"; };
 		13E98D6C20BD82D000E50EC8 /* EthereumKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EthereumKit.framework; path = Carthage/Build/iOS/EthereumKit.framework; sourceTree = "<group>"; };
 		13E98D7A20BD836100E50EC8 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		13E98D7C20BD839100E50EC8 /* WalletViewController.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletViewController.swift .swift"; sourceTree = "<group>"; };
-		13E98D7E20BD83B900E50EC8 /* SettingViewController.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingViewController.swift .swift"; sourceTree = "<group>"; };
-		13E98D8120BD886600E50EC8 /* UIImage+Extention.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extention.swift .swift"; sourceTree = "<group>"; };
+		13E98D7C20BD839100E50EC8 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		13E98D7E20BD83B900E50EC8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		13E98D8120BD886600E50EC8 /* UIImage+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extention.swift"; sourceTree = "<group>"; };
 		2B3A84CD3215D6BFDC6CC9B0 /* Pods_econome_wallet_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_econome_wallet_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		358CABFCBAE905D57E69220E /* Pods-econome-wallet-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-ios/Pods-econome-wallet-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		3E8B695B82E4B488158B1807 /* Pods-econome-wallet-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosUITests/Pods-econome-wallet-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 		13353B3720C272BB00DE9FD7 /* GethJsonRpcWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				13353B3820C2774D00DE9FD7 /* EtherKeystore.swift .swift */,
+				13353B3820C2774D00DE9FD7 /* EtherKeystore.swift */,
 				13353B3B20C280D500DE9FD7 /* JsonRpcWrapper.swift */,
 			);
 			path = GethJsonRpcWrapper;
@@ -172,9 +172,9 @@
 			isa = PBXGroup;
 			children = (
 				13E98D7A20BD836100E50EC8 /* MainTabBarViewController.swift */,
-				13E98D7C20BD839100E50EC8 /* WalletViewController.swift .swift */,
-				13E98D7E20BD83B900E50EC8 /* SettingViewController.swift .swift */,
-				135027DF20BD94FC0039FC24 /* InfoViewController.swift .swift */,
+				13E98D7C20BD839100E50EC8 /* WalletViewController.swift */,
+				13E98D7E20BD83B900E50EC8 /* SettingViewController.swift */,
+				135027DF20BD94FC0039FC24 /* InfoViewController.swift */,
 				135027E120BDAA410039FC24 /* AirdropViewController.swift */,
 				135027E320BDAA720039FC24 /* TransactionViewController.swift */,
 			);
@@ -249,7 +249,7 @@
 		13E98D8020BD883C00E50EC8 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				13E98D8120BD886600E50EC8 /* UIImage+Extention.swift .swift */,
+				13E98D8120BD886600E50EC8 /* UIImage+Extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -564,14 +564,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13E98D8220BD886600E50EC8 /* UIImage+Extention.swift .swift in Sources */,
+				13E98D8220BD886600E50EC8 /* UIImage+Extention.swift in Sources */,
 				13E98D7B20BD836100E50EC8 /* MainTabBarViewController.swift in Sources */,
-				13E98D7D20BD839100E50EC8 /* WalletViewController.swift .swift in Sources */,
+				13E98D7D20BD839100E50EC8 /* WalletViewController.swift in Sources */,
 				13353B3C20C280D500DE9FD7 /* JsonRpcWrapper.swift in Sources */,
-				135027E020BD94FC0039FC24 /* InfoViewController.swift .swift in Sources */,
-				13353B3920C2774D00DE9FD7 /* EtherKeystore.swift .swift in Sources */,
+				135027E020BD94FC0039FC24 /* InfoViewController.swift in Sources */,
+				13353B3920C2774D00DE9FD7 /* EtherKeystore.swift in Sources */,
 				135027E420BDAA720039FC24 /* TransactionViewController.swift in Sources */,
-				13E98D7F20BD83B900E50EC8 /* SettingViewController.swift .swift in Sources */,
+				13E98D7F20BD83B900E50EC8 /* SettingViewController.swift in Sources */,
 				135027E220BDAA410039FC24 /* AirdropViewController.swift in Sources */,
 				13E98D3A20BD7FF500E50EC8 /* AppDelegate.swift in Sources */,
 			);
