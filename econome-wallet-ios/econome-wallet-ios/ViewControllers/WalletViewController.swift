@@ -1,5 +1,7 @@
 import UIKit
 import SnapKit
+import APIKit
+import JSONRPCKit
 import SwiftIconFont
 import KeychainSwift
 
@@ -12,6 +14,8 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -62,6 +66,27 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "TokenListCell", for: indexPath) as! TokenListCell
         cell.titleLab?.text = "ETH"
         cell.despLab?.text = "N/A"
+        
+        // Keystore
+        let keychain = KeychainSwift()
+        let address: String? = keychain.get(EtherKeystore().myEtherAddress)
+        
+        let request = EthGetBalance(
+            address: address!,
+            quantity: "latest"
+        )
+        
+        let batch = batchFactory.create(request)
+        let httpRequest = EthServiceRequest(batch: batch)
+        
+        Session.send(httpRequest) { result in
+            switch result {
+            case .success(let result):
+                cell.despLab?.text = String(strtoul(result, nil, 16))
+            case .failure(let error):
+                print(error)
+            }
+        }
 
         return cell
     }

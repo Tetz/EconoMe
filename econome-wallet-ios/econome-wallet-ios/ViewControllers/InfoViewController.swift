@@ -23,7 +23,7 @@ final class InfoViewController: UIViewController {
         return container
     }()
     
-        let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
+    let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
     
     override func viewDidLoad() {
         super.viewDidLoad()
