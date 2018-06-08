@@ -13,37 +13,38 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     }
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    private lazy var container: UITableView = {
-        let container = UITableView()
-        container.backgroundColor = UIColor.white
-        container.layer.borderColor = UIColor.red.cgColor
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = UIColor.white
+        tableView.layer.borderColor = UIColor.red.cgColor
+        tableView.tableFooterView = UIView()
         
         // The section header scroll just like any regular cell
         let dummyViewHeight = CGFloat(206)
-        container.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: container.bounds.size.width, height: dummyViewHeight))
-        container.contentInset = UIEdgeInsetsMake(-dummyViewHeight, 0, 0, 0)
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: dummyViewHeight))
+        tableView.contentInset = UIEdgeInsetsMake(-dummyViewHeight, 0, 0, 0)
         
-        return container
+        return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Navigation Bar
         navigationItem.title = titleName
-        let infoImg = UIImage(from: .fontAwesome, code: "envelopeo", backgroundColor: .clear, size: CGSize(width: 30, height: 30))
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: infoImg, style: .plain, target: self, action: #selector(onTappedRightBarButton))
+        // Release version 1.0
+        // let infoImg = UIImage(from: .fontAwesome, code: "envelopeo", backgroundColor: .clear, size: CGSize(width: 30, height: 30))
+        // navigationItem.rightBarButtonItem = UIBarButtonItem(image: infoImg, style: .plain, target: self, action: #selector(onTappedRightBarButton))
         
-        container.frame = CGRect(
+        tableView.frame = CGRect(
             x: 0,
             y: statusBarHeight,
             width: self.view.frame.width,
             height: self.view.frame.height - statusBarHeight
         )
-        container.delegate = self
-        container.dataSource = self
-        self.view.addSubview(container)
-        
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.view.addSubview(tableView)
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,23 +58,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         switch idx {
         case 1:
             cell.textLabel?.text = "ETH"
-            cell.detailTextLabel?.text = "0.20331"
-        case 2:
-            cell.textLabel?.text = "Token 2"
-        case 3:
-            cell.textLabel?.text = "Token 3"
-        case 4:
-            cell.textLabel?.text = "Token 4"
-        case 5:
-            cell.textLabel?.text = "Token 5"
-        case 6:
-            cell.textLabel?.text = "Token 6"
-        case 7:
-            cell.textLabel?.text = "Token 7"
-        case 8:
-            cell.textLabel?.text = "Token 8"
-        case 9:
-            cell.textLabel?.text = "Token 9"
+            cell.detailTextLabel?.text = "N/A"
         default:
             print("Error: index is not match")
         }
@@ -82,7 +67,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return 1
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -114,7 +99,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         
         let walletAssetsAmount = UILabel()
         walletImageView.addSubview(walletAssetsAmount)
-        walletAssetsAmount.text = "¥ 31238.55"
+        walletAssetsAmount.text = "¥ N/A"
         walletAssetsAmount.textColor = UIColor.white
         walletAssetsAmount.font =  UIFont.systemFont(ofSize: 30.0)
         walletAssetsAmount.snp.makeConstraints { make in

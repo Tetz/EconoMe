@@ -16,11 +16,14 @@ final class SettingViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         // Navigation Bar
         navigationItem.title = titleName
-        let infoImg = UIImage(from: .fontAwesome, code: "envelopeo", backgroundColor: .clear, size: CGSize(width: 30, height: 30))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: infoImg, style: .plain, target: self, action: #selector(onTappedRightBarButton))
+        
+        // Release version 1.0
+        // let infoImg = UIImage(from: .fontAwesome, code: "envelopeo", backgroundColor: .clear, size: CGSize(width: 30, height: 30))
+        // navigationItem.rightBarButtonItem = UIBarButtonItem(image: infoImg, style: .plain, target: self, action: #selector(onTappedRightBarButton))
         
         let tableView = UITableView()
         tableView.layer.borderColor = UIColor.red.cgColor
+        tableView.tableFooterView = UIView()
         
         tableView.frame = CGRect(
             x: 0,
@@ -45,17 +48,7 @@ final class SettingViewController: UIViewController, UITableViewDelegate, UITabl
         
         switch idx {
         case 1:
-            cell.textLabel?.text = "Push Notification"
-        case 2:
-            cell.textLabel?.text = "Tutorial"
-        case 3:
-            cell.textLabel?.text = "FAQ"
-        case 4:
-            cell.textLabel?.text = "Contact us"
-        case 5:
-            cell.textLabel?.text = "Terms of service"
-        case 6:
-            cell.textLabel?.text = "About EconoMe Wallet"
+            cell.textLabel?.text = "Export Wallet"
         default:
             print("Error: index is not match")
         }
@@ -64,7 +57,7 @@ final class SettingViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 1
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
