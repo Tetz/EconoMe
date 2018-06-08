@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1319CF5220CA4BBD005D1C27 /* TokenListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319CF5120CA4BBD005D1C27 /* TokenListCell.swift */; };
+		1319CF5420CA6E7E005D1C27 /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319CF5320CA6E7E005D1C27 /* DecodableDataParser.swift */; };
+		1319CF5820CA7593005D1C27 /* CoinMarketCapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319CF5720CA7593005D1C27 /* CoinMarketCapRequest.swift */; };
 		13353B3920C2774D00DE9FD7 /* EtherKeystore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13353B3820C2774D00DE9FD7 /* EtherKeystore.swift */; };
 		13353B3C20C280D500DE9FD7 /* JsonRpcWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13353B3B20C280D500DE9FD7 /* JsonRpcWrapper.swift */; };
 		135027E020BD94FC0039FC24 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027DF20BD94FC0039FC24 /* InfoViewController.swift */; };
@@ -79,6 +81,8 @@
 
 /* Begin PBXFileReference section */
 		1319CF5120CA4BBD005D1C27 /* TokenListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenListCell.swift; sourceTree = "<group>"; };
+		1319CF5320CA6E7E005D1C27 /* DecodableDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
+		1319CF5720CA7593005D1C27 /* CoinMarketCapRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMarketCapRequest.swift; sourceTree = "<group>"; };
 		13353B3820C2774D00DE9FD7 /* EtherKeystore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherKeystore.swift; sourceTree = "<group>"; };
 		13353B3B20C280D500DE9FD7 /* JsonRpcWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonRpcWrapper.swift; sourceTree = "<group>"; };
 		135027DF20BD94FC0039FC24 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -162,13 +166,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		13353B3720C272BB00DE9FD7 /* GethJsonRpcWrapper */ = {
+		1319CF5520CA741D005D1C27 /* JsonRpc */ = {
 			isa = PBXGroup;
 			children = (
-				13353B3820C2774D00DE9FD7 /* EtherKeystore.swift */,
 				13353B3B20C280D500DE9FD7 /* JsonRpcWrapper.swift */,
+				13353B3820C2774D00DE9FD7 /* EtherKeystore.swift */,
 			);
-			path = GethJsonRpcWrapper;
+			path = JsonRpc;
+			sourceTree = "<group>";
+		};
+		1319CF5620CA7431005D1C27 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				1319CF5320CA6E7E005D1C27 /* DecodableDataParser.swift */,
+				1319CF5720CA7593005D1C27 /* CoinMarketCapRequest.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		13353B3720C272BB00DE9FD7 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1319CF5620CA7431005D1C27 /* Http */,
+				1319CF5520CA741D005D1C27 /* JsonRpc */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		135027EB20BE59F50039FC24 /* ViewControllers */ = {
@@ -220,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				1319CF5020CA4BAD005D1C27 /* Views */,
-				13353B3720C272BB00DE9FD7 /* GethJsonRpcWrapper */,
+				13353B3720C272BB00DE9FD7 /* API */,
 				135027EB20BE59F50039FC24 /* ViewControllers */,
 				13E98D8020BD883C00E50EC8 /* Extentions */,
 				13E98D3920BD7FF500E50EC8 /* AppDelegate.swift */,
@@ -571,11 +593,13 @@
 				13E98D7B20BD836100E50EC8 /* MainTabBarViewController.swift in Sources */,
 				13E98D7D20BD839100E50EC8 /* WalletViewController.swift in Sources */,
 				1319CF5220CA4BBD005D1C27 /* TokenListCell.swift in Sources */,
+				1319CF5420CA6E7E005D1C27 /* DecodableDataParser.swift in Sources */,
 				13353B3C20C280D500DE9FD7 /* JsonRpcWrapper.swift in Sources */,
 				135027E020BD94FC0039FC24 /* InfoViewController.swift in Sources */,
 				13353B3920C2774D00DE9FD7 /* EtherKeystore.swift in Sources */,
 				135027E420BDAA720039FC24 /* TransactionViewController.swift in Sources */,
 				13E98D7F20BD83B900E50EC8 /* SettingViewController.swift in Sources */,
+				1319CF5820CA7593005D1C27 /* CoinMarketCapRequest.swift in Sources */,
 				135027E220BDAA410039FC24 /* AirdropViewController.swift in Sources */,
 				13E98D3A20BD7FF500E50EC8 /* AppDelegate.swift in Sources */,
 			);

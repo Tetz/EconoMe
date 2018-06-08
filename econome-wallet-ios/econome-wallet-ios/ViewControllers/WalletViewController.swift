@@ -23,7 +23,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         tableView.layer.borderColor = UIColor.red.cgColor
         tableView.tableFooterView = UIView()
         
-        // TODO
+        // Custom cell
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -66,6 +66,16 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "TokenListCell", for: indexPath) as! TokenListCell
         cell.titleLab?.text = "ETH"
         cell.despLab?.text = "N/A"
+        
+        // CoinMarketCap API
+        Session.send(CoinMarketCapAPI.SearchTokens(query: "JPY")) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error)
+            }
+        }
         
         // Keystore
         let keychain = KeychainSwift()
