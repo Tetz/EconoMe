@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		1319CF5220CA4BBD005D1C27 /* TokenListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319CF5120CA4BBD005D1C27 /* TokenListCell.swift */; };
 		1319CF5820CA7593005D1C27 /* CoinMarketCapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1319CF5720CA7593005D1C27 /* CoinMarketCapRequest.swift */; };
+		131E2FF620CAE5900043F60D /* Geth.framework in Sources */ = {isa = PBXBuildFile; fileRef = 1394D72B20BEF49E001252B8 /* Geth.framework */; };
+		131E2FF720CAE5900043F60D /* Result.framework in Sources */ = {isa = PBXBuildFile; fileRef = 135027F220BE93770039FC24 /* Result.framework */; };
+		131E2FF820CAE5900043F60D /* APIKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = 135027EC20BE81260039FC24 /* APIKit.framework */; };
+		131E2FF920CAE5900043F60D /* JSONRPCKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = 135027ED20BE81260039FC24 /* JSONRPCKit.framework */; };
+		131E2FFA20CAE5900043F60D /* CryptoEthereumSwift.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6B20BD82D000E50EC8 /* CryptoEthereumSwift.framework */; };
+		131E2FFB20CAE5900043F60D /* CryptoSwift.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6920BD82D000E50EC8 /* CryptoSwift.framework */; };
+		131E2FFC20CAE5900043F60D /* EthereumKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6C20BD82D000E50EC8 /* EthereumKit.framework */; };
+		131E2FFD20CAE5900043F60D /* KeychainSwift.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6820BD82D000E50EC8 /* KeychainSwift.framework */; };
+		131E2FFE20CAE5900043F60D /* SnapKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6720BD82D000E50EC8 /* SnapKit.framework */; };
+		131E2FFF20CAE5900043F60D /* SwiftIconFont.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6A20BD82D000E50EC8 /* SwiftIconFont.framework */; };
+		131E300020CAE5D10043F60D /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135027EC20BE81260039FC24 /* APIKit.framework */; };
 		13353B3920C2774D00DE9FD7 /* EtherKeystore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13353B3820C2774D00DE9FD7 /* EtherKeystore.swift */; };
 		13353B3C20C280D500DE9FD7 /* JsonRpcWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13353B3B20C280D500DE9FD7 /* JsonRpcWrapper.swift */; };
 		135027E020BD94FC0039FC24 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135027DF20BD94FC0039FC24 /* InfoViewController.swift */; };
@@ -38,6 +49,7 @@
 		13E98D7F20BD83B900E50EC8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D7E20BD83B900E50EC8 /* SettingViewController.swift */; };
 		13E98D8220BD886600E50EC8 /* UIImage+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D8120BD886600E50EC8 /* UIImage+Extention.swift */; };
 		2BDAFDC3E37273A3F93057AC /* Pods_econome_wallet_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F9378BA06CF7D32A7EF960 /* Pods_econome_wallet_iosUITests.framework */; };
+		742C0DEDC0E7ACE5FA1C4A54 /* TestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435CFDAB6E7B7F3ACCED00A /* TestRequest.swift */; };
 		CD5CBB3C79AE352790460D40 /* Pods_econome_wallet_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A84CD3215D6BFDC6CC9B0 /* Pods_econome_wallet_iosTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +128,7 @@
 		3E8B695B82E4B488158B1807 /* Pods-econome-wallet-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosUITests/Pods-econome-wallet-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		49F9378BA06CF7D32A7EF960 /* Pods_econome_wallet_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_econome_wallet_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF58E6CC514F632D53C0B21 /* Pods-econome-wallet-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosTests/Pods-econome-wallet-iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		7435CFDAB6E7B7F3ACCED00A /* TestRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRequest.swift; sourceTree = "<group>"; };
 		AE8C360178DCE3C6D3EF6250 /* Pods-econome-wallet-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosUITests/Pods-econome-wallet-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D00E25240DC3FF9E12A24148 /* Pods-econome-wallet-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosTests/Pods-econome-wallet-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA08CBDE761FC1494AD36A58 /* Pods-econome-wallet-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-ios/Pods-econome-wallet-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				131E300020CAE5D10043F60D /* APIKit.framework in Frameworks */,
 				CD5CBB3C79AE352790460D40 /* Pods_econome_wallet_iosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				1319CF5720CA7593005D1C27 /* CoinMarketCapRequest.swift */,
+				7435CFDAB6E7B7F3ACCED00A /* TestRequest.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -598,6 +613,7 @@
 				1319CF5820CA7593005D1C27 /* CoinMarketCapRequest.swift in Sources */,
 				135027E220BDAA410039FC24 /* AirdropViewController.swift in Sources */,
 				13E98D3A20BD7FF500E50EC8 /* AppDelegate.swift in Sources */,
+				742C0DEDC0E7ACE5FA1C4A54 /* TestRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +621,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				131E2FF620CAE5900043F60D /* Geth.framework in Sources */,
+				131E2FF720CAE5900043F60D /* Result.framework in Sources */,
+				131E2FF820CAE5900043F60D /* APIKit.framework in Sources */,
+				131E2FF920CAE5900043F60D /* JSONRPCKit.framework in Sources */,
+				131E2FFA20CAE5900043F60D /* CryptoEthereumSwift.framework in Sources */,
+				131E2FFB20CAE5900043F60D /* CryptoSwift.framework in Sources */,
+				131E2FFC20CAE5900043F60D /* EthereumKit.framework in Sources */,
+				131E2FFD20CAE5900043F60D /* KeychainSwift.framework in Sources */,
+				131E2FFE20CAE5900043F60D /* SnapKit.framework in Sources */,
+				131E2FFF20CAE5900043F60D /* SwiftIconFont.framework in Sources */,
 				13E98D4F20BD7FF700E50EC8 /* econome_wallet_iosTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -814,6 +840,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG88Z7A99A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "econome-wallet-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -836,6 +866,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG88Z7A99A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "econome-wallet-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
