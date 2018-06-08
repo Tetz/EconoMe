@@ -17,7 +17,7 @@ final class MainTabBarViewController: UITabBarController {
         // let airdropImage = UIImage(from: .fontAwesome, code: "gift", backgroundColor: .clear, size: CGSize(width: 35, height: 35))
         // airdropViewController.tabBarItem = UITabBarItem(title: "airdrop", image: airdropImage, tag: 1)
         
-        let walletViewController = WalletViewController(titleName: "EconoMe Wallet")
+        let walletViewController = WalletViewController(titleName: "EconoMe")
         let walletImage = UIImage(from: .fontAwesome, code: "creditcard", backgroundColor: .clear, size: CGSize(width: 30, height: 30))
         walletViewController.tabBarItem = UITabBarItem(title: "wallet", image: walletImage, tag: 2)
         

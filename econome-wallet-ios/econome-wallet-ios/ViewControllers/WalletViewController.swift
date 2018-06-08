@@ -19,6 +19,12 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         tableView.layer.borderColor = UIColor.red.cgColor
         tableView.tableFooterView = UIView()
         
+        // TODO
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(TYCustomCell.self, forCellReuseIdentifier: "TYCustomCell")
+        
         // The section header scroll just like any regular cell
         let dummyViewHeight = CGFloat(206)
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: dummyViewHeight))
@@ -26,6 +32,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         
         return tableView
     }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,17 +59,10 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-        let idx = indexPath.row + 1
-        
-        switch idx {
-        case 1:
-            cell.textLabel?.text = "ETH"
-            cell.detailTextLabel?.text = "N/A"
-        default:
-            print("Error: index is not match")
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TYCustomCell", for: indexPath) as! TYCustomCell
+        cell.titleLab?.text = "ETH"
+        cell.despLab?.text = "N/A"
+
         return cell
     }
     
