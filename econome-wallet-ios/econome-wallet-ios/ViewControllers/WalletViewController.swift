@@ -82,7 +82,9 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         Session.send(httpRequest) { result in
             switch result {
             case .success(let result):
-                cell.despLab?.text = String(strtoul(result, nil, 16))
+                print("=== ETH ===")
+                print(result)
+                cell.despLab?.text = String(Double(strtoul(result, nil, 16)) * pow(0.1, 18))
             case .failure(let error):
                 print(error)
             }
@@ -151,7 +153,6 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         Session.send(cmcRequest) { result in
             switch result {
             case .success(let token):
-                print("price: \(token.price)")
                 tokenPrice = token.price
             case .failure(let error):
                 print("error: \(error)")
@@ -170,7 +171,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         Session.send(httpRequest) { result in
             switch result {
             case .success(let result):
-                walletAssetsAmount.text = "¥ \(Double(strtoul(result, nil, 16)) * tokenPrice)"
+                walletAssetsAmount.text = "¥ \(Double(strtoul(result, nil, 16)) * tokenPrice * pow(0.1, 18))"
             case .failure(let error):
                 print(error)
             }
