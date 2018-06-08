@@ -23,7 +23,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.register(TYCustomCell.self, forCellReuseIdentifier: "TYCustomCell")
+        tableView.register(TokenListCell.self, forCellReuseIdentifier: "TokenListCell")
         
         // The section header scroll just like any regular cell
         let dummyViewHeight = CGFloat(206)
@@ -59,7 +59,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TYCustomCell", for: indexPath) as! TYCustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TokenListCell", for: indexPath) as! TokenListCell
         cell.titleLab?.text = "ETH"
         cell.despLab?.text = "N/A"
 
