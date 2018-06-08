@@ -24,3 +24,4 @@ Pods/*
 *.swp
 !.gitkeep
 .DS_Store
+.idea/
