@@ -67,16 +67,6 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         cell.titleLab?.text = "ETH"
         cell.despLab?.text = "N/A"
         
-        // CoinMarketCap API
-        Session.send(CoinMarketCapAPI.SearchTokens(query: "JPY")) { result in
-            switch result {
-            case .success(let response):
-                print(response)
-            case .failure(let error):
-                print(error)
-            }
-        }
-        
         // Keystore
         let keychain = KeychainSwift()
         let address: String? = keychain.get(EtherKeystore().myEtherAddress)
@@ -152,6 +142,38 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         walletAddress.snp.makeConstraints { make in
             make.left.equalTo(walletImageView).offset(20)
             make.centerY.equalTo(walletImageView).offset(50)
+        }
+        
+        // CoinMarketCap API
+        let cmcRequest = GetPriceRequest()
+        
+        var tokenPrice: Double = 0
+        Session.send(cmcRequest) { result in
+            switch result {
+            case .success(let token):
+                print("price: \(token.price)")
+                tokenPrice = token.price
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
+        
+        // Keystore
+        let request = EthGetBalance(
+            address: address!,
+            quantity: "latest"
+        )
+        
+        let batch = batchFactory.create(request)
+        let httpRequest = EthServiceRequest(batch: batch)
+        
+        Session.send(httpRequest) { result in
+            switch result {
+            case .success(let result):
+                walletAssetsAmount.text = "¥ \(Double(strtoul(result, nil, 16)) * tokenPrice)"
+            case .failure(let error):
+                print(error)
+            }
         }
         
         return walletContent
