@@ -1,5 +1,5 @@
 //
-//  TestRequest.swift
+//  TokenDataApi.swift
 //  JSONRPCKit
 //
 //  Created by ishkawa on 2016/07/28.

@@ -11,8 +11,8 @@ class econome_wallet_iosTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        XCTAssertEqual(TestRequest().testApiReq(), 100)
+    func testTokenDataApi_get() {
+        XCTAssertEqual(TokenDataApi().get(), 100)
     }
 
 }
