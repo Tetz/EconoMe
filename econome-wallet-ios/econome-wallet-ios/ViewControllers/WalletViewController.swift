@@ -31,7 +31,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         tableView.register(TokenListCell.self, forCellReuseIdentifier: "TokenListCell")
         
         // The section header scroll just like any regular cell
-        let dummyViewHeight = CGFloat(206)
+        let dummyViewHeight = CGFloat(220)
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: dummyViewHeight))
         tableView.contentInset = UIEdgeInsetsMake(-dummyViewHeight, 0, 0, 0)
         
@@ -119,7 +119,6 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
                     print(error)
                 }
             }
-
         }
 
         return cell
@@ -131,6 +130,8 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Index path of the tapped cell: \(indexPath.row)")
+        let vc = TokenViewController(titleName: "Ethereum (ETH)")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -198,11 +199,12 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         
         let batch = batchFactory.create(request)
         let httpRequest = EthServiceRequest(batch: batch)
-        
+
         Session.send(httpRequest) { result in
             switch result {
             case .success(let result):
-                walletAssetsAmount.text = "¥ \(self.ethHelper.weiToEth(hex: result) * tokenPrice)"
+                let assets = String(format: "%.2f", self.ethHelper.weiToEth(hex: result) * tokenPrice)
+                walletAssetsAmount.text = "¥ \(assets)"
             case .failure(let error):
                 print(error)
             }
@@ -212,7 +214,6 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @objc func onTappedRightBarButton(_ sender: UIButton) {
-        print(sender)
         let vc = InfoViewController(titleName: "Information")
         navigationController?.pushViewController(vc, animated: true)
     }

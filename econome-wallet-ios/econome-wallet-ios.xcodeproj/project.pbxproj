@@ -51,6 +51,7 @@
 		2BDAFDC3E37273A3F93057AC /* Pods_econome_wallet_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F9378BA06CF7D32A7EF960 /* Pods_econome_wallet_iosUITests.framework */; };
 		742C0DEDC0E7ACE5FA1C4A54 /* TokenDataApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435CFDAB6E7B7F3ACCED00A /* TokenDataApi.swift */; };
 		7435DADBCDA1CF47CBD37097 /* EthereumHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74946259FB9E10A87804A912 /* EthereumHelper.swift */; };
+		744AB681C53568A345D538B6 /* TokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6359EBD567674DDE08F1F /* TokenViewController.swift */; };
 		CD5CBB3C79AE352790460D40 /* Pods_econome_wallet_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A84CD3215D6BFDC6CC9B0 /* Pods_econome_wallet_iosTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,7 @@
 		5FF58E6CC514F632D53C0B21 /* Pods-econome-wallet-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosTests/Pods-econome-wallet-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		7435CFDAB6E7B7F3ACCED00A /* TokenDataApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenDataApi.swift; sourceTree = "<group>"; };
 		74946259FB9E10A87804A912 /* EthereumHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumHelper.swift; sourceTree = "<group>"; };
+		74A6359EBD567674DDE08F1F /* TokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenViewController.swift; sourceTree = "<group>"; };
 		AE8C360178DCE3C6D3EF6250 /* Pods-econome-wallet-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosUITests/Pods-econome-wallet-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D00E25240DC3FF9E12A24148 /* Pods-econome-wallet-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosTests/Pods-econome-wallet-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA08CBDE761FC1494AD36A58 /* Pods-econome-wallet-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-ios/Pods-econome-wallet-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				135027DF20BD94FC0039FC24 /* InfoViewController.swift */,
 				135027E120BDAA410039FC24 /* AirdropViewController.swift */,
 				135027E320BDAA720039FC24 /* TransactionViewController.swift */,
+				74A6359EBD567674DDE08F1F /* TokenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				13E98D3A20BD7FF500E50EC8 /* AppDelegate.swift in Sources */,
 				742C0DEDC0E7ACE5FA1C4A54 /* TokenDataApi.swift in Sources */,
 				7435DADBCDA1CF47CBD37097 /* EthereumHelper.swift in Sources */,
+				744AB681C53568A345D538B6 /* TokenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
