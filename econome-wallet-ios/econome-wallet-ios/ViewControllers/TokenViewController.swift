@@ -80,20 +80,20 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let walletContent = UIView()
+        let container = UIView()
         let grayColor = UIColor(red: 236/255.0, green: 240/255.0, blue: 241/255.0, alpha: 1.0)
-        walletContent.backgroundColor = grayColor
+        container.backgroundColor = grayColor
 
-//        let walletCard:UIImage = UIImage(named:"WalletCard")!
-//        let walletImageView = UIImageView(image:walletCard)
-//        walletContent.addSubview(walletImageView)
-//        walletImageView.snp.makeConstraints { make in
-//            make.size.equalTo(CGSize(width: 365, height: 206))
-//            make.centerX.equalTo(walletContent)
-//            make.centerY.equalTo(walletContent)
-//        }
+        let tokenImg:UIImage = UIImage(named:"Token")!
+        let tokenImgView = UIImageView(image:tokenImg)
+        container.addSubview(tokenImgView)
+        tokenImgView.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 100, height: 100))
+            make.centerX.equalTo(container)
+            make.centerY.equalTo(container)
+        }
 
-        return walletContent
+        return container
     }
 
 }
