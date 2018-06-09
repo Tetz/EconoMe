@@ -64,37 +64,73 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TokenListCell", for: indexPath) as! TokenListCell
-        cell.titleLab?.text = "ETH"
-        cell.despLab?.text = "N/A"
-        
+
         // Keystore
         let keychain = KeychainSwift()
         let address: String? = keychain.get(EtherKeystore().myEtherAddress)
-        
-        let request = EthGetBalance(
-            address: address!,
-            quantity: "latest"
-        )
-        
-        let batch = batchFactory.create(request)
-        let httpRequest = EthServiceRequest(batch: batch)
-        
-        Session.send(httpRequest) { result in
-            switch result {
-            case .success(let result):
-                print("=== ETH ===")
-                print(result)
-                cell.despLab?.text = String(Double(strtoul(result, nil, 16)) * pow(0.1, 18))
-            case .failure(let error):
-                print(error)
+
+        // TODO
+        if (indexPath.row == 0) {
+            cell.titleLab?.text = "ETH"
+            cell.despLab?.text = "N/A"
+
+            let request = EthGetBalance(
+                    address: address!,
+                    quantity: "latest"
+            )
+
+            let batch = batchFactory.create(request)
+            let httpRequest = EthServiceRequest(batch: batch)
+
+            Session.send(httpRequest) { result in
+                switch result {
+                case .success(let result):
+                    print("=== ETH ===")
+                    print(result)
+                    cell.despLab?.text = String(Double(strtoul(result, nil, 16)) * pow(0.1, 18))
+                case .failure(let error):
+                    print(error)
+                }
             }
+        } else if (indexPath.row == 1) {
+            cell.titleLab?.text = "XOC"
+            cell.despLab?.text = "N/A"
+
+            // Remove 0x
+            let addressWithoutPrefix = address!.dropFirst(2)
+
+            let request = Erc20TokenGetBalance(
+                    to: "0x98cd8de75f15ceb40a8e8a5f19f19a6f943373f4",
+                    data: "0x70a08231000000000000000000000000" + addressWithoutPrefix,
+                    quantity: "latest"
+            )
+
+            let batch = batchFactory.create(request)
+            let httpRequest = EthServiceRequest(batch: batch)
+
+            print(httpRequest)
+
+            Session.send(httpRequest) { result in
+                switch result {
+                case .success(let result):
+                    print("===== Success: XOC =====")
+                    cell.despLab?.text = String(Double(strtoul(result, nil, 16)) * pow(0.1, 2))
+                    print(result)
+                case .failure(let error):
+                    print("===== Error: JSONRPC =====")
+                    print(error)
+                }
+            }
+
         }
+
+
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
