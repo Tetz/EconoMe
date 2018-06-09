@@ -16,6 +16,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
+    let ethHelper = EthereumHelper()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -69,7 +70,6 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         let keychain = KeychainSwift()
         let address: String? = keychain.get(EtherKeystore().myEtherAddress)
 
-        // TODO
         if (indexPath.row == 0) {
             cell.titleLab?.text = "ETH"
             cell.despLab?.text = "N/A"
@@ -87,7 +87,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
                 case .success(let result):
                     print("=== ETH ===")
                     print(result)
-                    cell.despLab?.text = String(Double(strtoul(result, nil, 16)) * pow(0.1, 18))
+                    cell.despLab?.text = String(self.ethHelper.weiToEth(hex: result))
                 case .failure(let error):
                     print(error)
                 }
@@ -96,8 +96,9 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             cell.titleLab?.text = "XOC"
             cell.despLab?.text = "N/A"
 
-            // Remove 0x
+            // Remove 0x prefix
             let addressWithoutPrefix = address!.dropFirst(2)
+            let decimals: Double = 2
 
             let request = Erc20TokenGetBalance(
                     to: "0x98cd8de75f15ceb40a8e8a5f19f19a6f943373f4",
@@ -108,23 +109,18 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             let batch = batchFactory.create(request)
             let httpRequest = EthServiceRequest(batch: batch)
 
-            print(httpRequest)
-
             Session.send(httpRequest) { result in
                 switch result {
                 case .success(let result):
                     print("===== Success: XOC =====")
-                    cell.despLab?.text = String(Double(strtoul(result, nil, 16)) * pow(0.1, 2))
+                    cell.despLab?.text = String(self.ethHelper.tokenNum(hex: result, decimals: decimals))
                     print(result)
                 case .failure(let error):
-                    print("===== Error: JSONRPC =====")
                     print(error)
                 }
             }
 
         }
-
-
 
         return cell
     }
@@ -181,10 +177,9 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             make.left.equalTo(walletImageView).offset(20)
             make.centerY.equalTo(walletImageView).offset(50)
         }
-        
+
         // CoinMarketCap API
         let cmcRequest = GetPriceRequest()
-        
         var tokenPrice: Double = 0
         Session.send(cmcRequest) { result in
             switch result {
@@ -194,7 +189,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
                 print("error: \(error)")
             }
         }
-        
+
         // Keystore
         let request = EthGetBalance(
             address: address!,
@@ -207,7 +202,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         Session.send(httpRequest) { result in
             switch result {
             case .success(let result):
-                walletAssetsAmount.text = "¥ \(Double(strtoul(result, nil, 16)) * tokenPrice * pow(0.1, 18))"
+                walletAssetsAmount.text = "¥ \(self.ethHelper.weiToEth(hex: result) * tokenPrice)"
             case .failure(let error):
                 print(error)
             }

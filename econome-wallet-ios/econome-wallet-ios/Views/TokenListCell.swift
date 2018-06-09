@@ -19,8 +19,6 @@ class TokenListCell: UITableViewCell {
     func setupUI() {
         imgView = UIImageView()
         imgView?.image = UIImage.init(named: "Ethereum")
-        // imgView?.layer.borderColor = UIColor.gray.cgColor
-        // imgView?.layer.borderWidth = 1.0
         self.addSubview(imgView!)
         
         let label1 = UILabel()

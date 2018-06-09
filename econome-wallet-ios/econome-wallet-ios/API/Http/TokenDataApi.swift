@@ -15,6 +15,7 @@ struct GetTokenDataRequest: TokenDataRequest {
         return .get
     }
 
+    // EOS is 1765
     var path: String {
         return "/ticker/1765/"
     }
