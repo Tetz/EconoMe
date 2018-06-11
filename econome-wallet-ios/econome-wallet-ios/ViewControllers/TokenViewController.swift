@@ -84,14 +84,47 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
         let grayColor = UIColor(red: 236/255.0, green: 240/255.0, blue: 241/255.0, alpha: 1.0)
         container.backgroundColor = grayColor
 
+        // View
         let tokenImg:UIImage = UIImage(named:"Token")!
         let tokenImgView = UIImageView(image:tokenImg)
         container.addSubview(tokenImgView)
         tokenImgView.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 100, height: 100))
+            make.top.equalTo(container).offset(20)
             make.centerX.equalTo(container)
-            make.centerY.equalTo(container)
         }
+
+        let tokenAssetsLabel = UILabel()
+        container.addSubview(tokenAssetsLabel)
+        tokenAssetsLabel.text = "¥ N/A"
+        tokenAssetsLabel.textColor = UIColor.black
+        tokenAssetsLabel.font =  UIFont.systemFont(ofSize: 20.0)
+        tokenAssetsLabel.snp.makeConstraints { make in
+            make.top.equalTo(tokenImgView).offset(110)
+            make.centerX.equalTo(container)
+        }
+
+        // Keystore
+        let keychain = KeychainSwift()
+        let address: String? = keychain.get(EtherKeystore().myEtherAddress)
+        let request = EthGetBalance(
+                address: address!,
+                quantity: "latest"
+        )
+
+        let batch = batchFactory.create(request)
+        let httpRequest = EthServiceRequest(batch: batch)
+
+        Session.send(httpRequest) { result in
+            switch result {
+            case .success(let result):
+                let assets = String(format: "%.2f", self.ethHelper.weiToEth(hex: result))
+                tokenAssetsLabel.text = "\(assets) ETH"
+            case .failure(let error):
+                print(error)
+            }
+        }
+
 
         return container
     }
