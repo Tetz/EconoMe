@@ -100,8 +100,24 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
         tokenAssetsLabel.textColor = UIColor.black
         tokenAssetsLabel.font =  UIFont.systemFont(ofSize: 20.0)
         tokenAssetsLabel.snp.makeConstraints { make in
-            make.top.equalTo(tokenImgView).offset(110)
+            make.top.equalTo(tokenImgView.snp.bottom).offset(10)
             make.centerX.equalTo(container)
+        }
+
+        let button = UIButton()
+        container.addSubview(button)
+        // rgb(52, 152, 219)
+        let buttonColor = UIColor(red: 52/255.0, green: 152/255.0, blue: 219/255.0, alpha: 1.0)
+        button.backgroundColor = buttonColor
+        button.layer.cornerRadius = 5
+        button.setTitle("Send", for: .normal)
+        button.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
+        // SnapKit
+        button.snp.makeConstraints { make in
+            make.top.equalTo(tokenAssetsLabel.snp.bottom).offset(10)
+            make.centerX.equalTo(container)
+            make.height.greaterThanOrEqualTo(50)
+            make.width.greaterThanOrEqualTo(150)
         }
 
         // Keystore
@@ -127,6 +143,10 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
 
 
         return container
+    }
+
+    @objc private func buttonTapped(_: UIButton) {
+        print("tapped!!")
     }
 
 }
