@@ -146,7 +146,8 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     @objc private func buttonTapped(_: UIButton) {
-        print("tapped!!")
+        let vc = SendViewController(titleName: "Send")
+        present(vc, animated: true)
     }
 
 }

@@ -217,4 +217,6 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         let vc = InfoViewController(titleName: "Information")
         navigationController?.pushViewController(vc, animated: true)
     }
+
 }
+
