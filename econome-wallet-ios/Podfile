@@ -4,7 +4,7 @@
 target 'econome-wallet-ios' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Geth', '1.8.6'
+  pod 'Geth', '1.8.11'
 
   # Pods for econome-wallet-ios
 

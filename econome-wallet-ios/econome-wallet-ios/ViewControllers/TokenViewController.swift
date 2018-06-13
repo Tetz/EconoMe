@@ -104,7 +104,7 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
             make.centerX.equalTo(container)
         }
 
-        // TODO Send and Receive Button
+        // Send and Receive Button
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let buttonWidth = 160
@@ -117,7 +117,7 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
         sendButton.backgroundColor = buttonColor
         sendButton.layer.cornerRadius = 5
         sendButton.setTitle("Send", for: .normal)
-        sendButton.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
+        sendButton.addTarget(self, action: #selector(self.onTappedSendButton(_:)), for: .touchUpInside)
         sendButton.snp.makeConstraints { make in
             make.top.equalTo(tokenAssetsLabel.snp.bottom).offset(10)
             make.left.equalTo(container).offset(spacer)
@@ -130,7 +130,7 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
         receiveButton.backgroundColor = buttonColor
         receiveButton.layer.cornerRadius = 5
         receiveButton.setTitle("Receive", for: .normal)
-        receiveButton.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
+        receiveButton.addTarget(self, action: #selector(self.onTappedReceiveButton(_:)), for: .touchUpInside)
         receiveButton.snp.makeConstraints { make in
             make.top.equalTo(tokenAssetsLabel.snp.bottom).offset(10)
             make.right.equalTo(container).offset(-spacer)
@@ -162,8 +162,14 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
         return container
     }
 
-    @objc private func buttonTapped(_: UIButton) {
+    @objc private func onTappedSendButton(_: UIButton) {
         let vc = SendViewController(titleName: "Send")
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
+    }
+
+    @objc private func onTappedReceiveButton(_: UIButton) {
+        let vc = ReceiveViewController(titleName: "Receive")
         let nav = UINavigationController(rootViewController: vc)
         self.present(nav, animated: true, completion: nil)
     }

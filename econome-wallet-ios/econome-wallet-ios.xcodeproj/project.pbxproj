@@ -53,6 +53,7 @@
 		7435DADBCDA1CF47CBD37097 /* EthereumHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74946259FB9E10A87804A912 /* EthereumHelper.swift */; };
 		744AB681C53568A345D538B6 /* TokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6359EBD567674DDE08F1F /* TokenViewController.swift */; };
 		74910DA6EA3388E6F04EB064 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7424A875F10F758E22CFB542 /* ConfirmViewController.swift */; };
+		74C02A380FA40E2AF920C223 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413A924F96D79286DFBECF4 /* ReceiveViewController.swift */; };
 		74D065B8CC7F2B09CE195D9C /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7411C755FA435910E3F7F470 /* SendViewController.swift */; };
 		CD5CBB3C79AE352790460D40 /* Pods_econome_wallet_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A84CD3215D6BFDC6CC9B0 /* Pods_econome_wallet_iosTests.framework */; };
 /* End PBXBuildFile section */
@@ -133,6 +134,7 @@
 		49F9378BA06CF7D32A7EF960 /* Pods_econome_wallet_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_econome_wallet_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF58E6CC514F632D53C0B21 /* Pods-econome-wallet-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosTests/Pods-econome-wallet-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		7411C755FA435910E3F7F470 /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
+		7413A924F96D79286DFBECF4 /* ReceiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		7424A875F10F758E22CFB542 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		7435CFDAB6E7B7F3ACCED00A /* TokenDataApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenDataApi.swift; sourceTree = "<group>"; };
 		74946259FB9E10A87804A912 /* EthereumHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumHelper.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				74A6359EBD567674DDE08F1F /* TokenViewController.swift */,
 				7411C755FA435910E3F7F470 /* SendViewController.swift */,
 				7424A875F10F758E22CFB542 /* ConfirmViewController.swift */,
+				7413A924F96D79286DFBECF4 /* ReceiveViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				744AB681C53568A345D538B6 /* TokenViewController.swift in Sources */,
 				74D065B8CC7F2B09CE195D9C /* SendViewController.swift in Sources */,
 				74910DA6EA3388E6F04EB064 /* ConfirmViewController.swift in Sources */,
+				74C02A380FA40E2AF920C223 /* ReceiveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,6 +725,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -781,6 +786,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

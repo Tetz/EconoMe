@@ -4,6 +4,7 @@ import SwiftIconFont
 import KeychainSwift
 import Foundation
 
+
 final class SendViewController: UIViewController {
     let titleName: String
     init(titleName: String) {
@@ -11,8 +12,6 @@ final class SendViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-
-    var addBtn: UIBarButtonItem!
 
     private lazy var container: UIView = {
         let container = UIView()
@@ -48,6 +47,44 @@ final class SendViewController: UIViewController {
             make.edges.equalToSuperview()
         }
 
+        // TODO
+        let addressLabel = UILabel()
+        container.addSubview(addressLabel)
+        addressLabel.font = UIFont.systemFont(ofSize: 20)
+        addressLabel.text = "To"
+        addressLabel.snp.makeConstraints { make in
+            make.left.equalTo(container).offset(20)
+            make.top.equalTo(container).offset(100)
+        }
+
+        let addressField = UITextField()
+        container.addSubview(addressField)
+        addressField.font = UIFont.systemFont(ofSize: 20)
+        addressField.placeholder = "0x..."
+        addressField.snp.makeConstraints { make in
+            make.top.equalTo(addressLabel.snp.bottom).offset(10)
+            make.left.equalTo(container).offset(20)
+        }
+
+        let amountLabel = UILabel()
+        container.addSubview(amountLabel)
+        amountLabel.font = UIFont.systemFont(ofSize: 20)
+        amountLabel.text = "Amount"
+        amountLabel.snp.makeConstraints { make in
+            make.top.equalTo(addressField.snp.bottom).offset(20)
+            make.left.equalTo(container).offset(20)
+        }
+
+        let amountField = UITextField()
+        container.addSubview(amountField)
+        amountField.font = UIFont.systemFont(ofSize: 20)
+        amountField.placeholder = "0.0 ETH"
+        amountField.snp.makeConstraints { make in
+            make.top.equalTo(amountLabel.snp.bottom).offset(10)
+            make.left.equalTo(container).offset(20)
+        }
+
+
     }
 
     @objc func onTappedLeftBarButton(sender: UIBarButtonItem){
@@ -68,3 +105,5 @@ final class SendViewController: UIViewController {
     }
 
 }
+
+

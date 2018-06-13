@@ -1,12 +1,12 @@
 PODS:
-  - Geth (1.8.6)
+  - Geth (1.8.11)
 
 DEPENDENCIES:
-  - Geth (= 1.8.6)
+  - Geth (= 1.8.11)
 
 SPEC CHECKSUMS:
-  Geth: 39b480bcb51bcdb61a660ece5e67c1c79b06cbac
+  Geth: ae1b2b966edd0482eda293dcee9b7f906e161589
 
-PODFILE CHECKSUM: 10a0744bb14af82548964e759c333492e05e66d8
+PODFILE CHECKSUM: 2add97da3dfce93bef7e7b1f68d9f1beb6867818
 
 COCOAPODS: 1.4.0
