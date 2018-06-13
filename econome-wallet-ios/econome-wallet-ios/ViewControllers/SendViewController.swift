@@ -12,17 +12,28 @@ final class SendViewController: UIViewController {
     }
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
+    var addBtn: UIBarButtonItem!
+
     private lazy var container: UIView = {
         let container = UIView()
-        container.backgroundColor = UIColor.white
+        container.backgroundColor = UIColor.green
 
         return container
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Navigation Bar
-        navigationItem.title = titleName
+        self.navigationItem.title = titleName
+        let closeBtn = UIBarButtonItem(
+                title: "Cancel",
+                style: .plain,
+                target: self,
+                action: #selector(self.cancelProject(sender:))
+        )
+
+        self.navigationItem.setLeftBarButton(closeBtn, animated: true)
 
         // View
         self.view.addSubview(container)
@@ -30,6 +41,10 @@ final class SendViewController: UIViewController {
             make.edges.equalToSuperview()
         }
 
+    }
+
+    @objc func cancelProject(sender: UIBarButtonItem){
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
