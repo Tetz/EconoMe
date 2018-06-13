@@ -76,7 +76,7 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 220
+        return 230
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -104,20 +104,38 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
             make.centerX.equalTo(container)
         }
 
-        let button = UIButton()
-        container.addSubview(button)
+        // TODO Send and Receive Button
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let buttonWidth = 160
+        let spacer = (Int(screenWidth) - (buttonWidth * 2)) / 3
+
         // rgb(52, 152, 219)
         let buttonColor = UIColor(red: 52/255.0, green: 152/255.0, blue: 219/255.0, alpha: 1.0)
-        button.backgroundColor = buttonColor
-        button.layer.cornerRadius = 5
-        button.setTitle("Send", for: .normal)
-        button.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
-        // SnapKit
-        button.snp.makeConstraints { make in
+        let sendButton = UIButton()
+        container.addSubview(sendButton)
+        sendButton.backgroundColor = buttonColor
+        sendButton.layer.cornerRadius = 5
+        sendButton.setTitle("Send", for: .normal)
+        sendButton.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
+        sendButton.snp.makeConstraints { make in
             make.top.equalTo(tokenAssetsLabel.snp.bottom).offset(10)
-            make.centerX.equalTo(container)
+            make.left.equalTo(container).offset(spacer)
             make.height.greaterThanOrEqualTo(50)
-            make.width.greaterThanOrEqualTo(150)
+            make.width.greaterThanOrEqualTo(buttonWidth)
+        }
+
+        let receiveButton = UIButton()
+        container.addSubview(receiveButton)
+        receiveButton.backgroundColor = buttonColor
+        receiveButton.layer.cornerRadius = 5
+        receiveButton.setTitle("Receive", for: .normal)
+        receiveButton.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
+        receiveButton.snp.makeConstraints { make in
+            make.top.equalTo(tokenAssetsLabel.snp.bottom).offset(10)
+            make.right.equalTo(container).offset(-spacer)
+            make.height.greaterThanOrEqualTo(50)
+            make.width.greaterThanOrEqualTo(buttonWidth)
         }
 
         // Keystore

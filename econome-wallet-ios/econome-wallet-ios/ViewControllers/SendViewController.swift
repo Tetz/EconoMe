@@ -16,7 +16,7 @@ final class SendViewController: UIViewController {
 
     private lazy var container: UIView = {
         let container = UIView()
-        container.backgroundColor = UIColor.green
+        container.backgroundColor = UIColor.white
 
         return container
     }()
