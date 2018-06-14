@@ -42,15 +42,19 @@ final class SendViewController: UIViewController {
         self.navigationItem.setRightBarButton(nextBtn, animated: true)
 
         // View
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let fieldWidth = screenWidth - 40
+
         self.view.addSubview(container)
         container.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
 
-        // TODO
         let addressLabel = UILabel()
         container.addSubview(addressLabel)
         addressLabel.font = UIFont.systemFont(ofSize: 20)
+        addressLabel.textColor = UIColor.darkGray
         addressLabel.text = "To"
         addressLabel.snp.makeConstraints { make in
             make.left.equalTo(container).offset(20)
@@ -61,14 +65,17 @@ final class SendViewController: UIViewController {
         container.addSubview(addressField)
         addressField.font = UIFont.systemFont(ofSize: 20)
         addressField.placeholder = "0x..."
+        addressField.borderStyle = .roundedRect
         addressField.snp.makeConstraints { make in
             make.top.equalTo(addressLabel.snp.bottom).offset(10)
             make.left.equalTo(container).offset(20)
+            make.width.greaterThanOrEqualTo(fieldWidth)
         }
 
         let amountLabel = UILabel()
         container.addSubview(amountLabel)
         amountLabel.font = UIFont.systemFont(ofSize: 20)
+        amountLabel.textColor = UIColor.darkGray
         amountLabel.text = "Amount"
         amountLabel.snp.makeConstraints { make in
             make.top.equalTo(addressField.snp.bottom).offset(20)
@@ -79,9 +86,11 @@ final class SendViewController: UIViewController {
         container.addSubview(amountField)
         amountField.font = UIFont.systemFont(ofSize: 20)
         amountField.placeholder = "0.0 ETH"
+        amountField.borderStyle = .roundedRect
         amountField.snp.makeConstraints { make in
             make.top.equalTo(amountLabel.snp.bottom).offset(10)
             make.left.equalTo(container).offset(20)
+            make.width.greaterThanOrEqualTo(fieldWidth)
         }
 
 
