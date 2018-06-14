@@ -69,7 +69,7 @@ final class SendViewController: UIViewController {
         addressField.snp.makeConstraints { make in
             make.top.equalTo(addressLabel.snp.bottom).offset(10)
             make.left.equalTo(container).offset(20)
-            make.width.greaterThanOrEqualTo(fieldWidth)
+            make.width.equalTo(fieldWidth)
         }
 
         let amountLabel = UILabel()
@@ -90,7 +90,7 @@ final class SendViewController: UIViewController {
         amountField.snp.makeConstraints { make in
             make.top.equalTo(amountLabel.snp.bottom).offset(10)
             make.left.equalTo(container).offset(20)
-            make.width.greaterThanOrEqualTo(fieldWidth)
+            make.width.equalTo(fieldWidth)
         }
 
 
