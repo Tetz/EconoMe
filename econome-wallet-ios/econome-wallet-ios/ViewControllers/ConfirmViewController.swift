@@ -5,8 +5,13 @@ import Foundation
 
 final class ConfirmViewController: UIViewController {
     let titleName: String
-    init(titleName: String) {
+    let recipientAddress: String
+    let amount: String
+
+    init(titleName: String, recipientAddress: String, amount: String) {
         self.titleName = titleName
+        self.recipientAddress = recipientAddress
+        self.amount = amount
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -46,7 +51,7 @@ final class ConfirmViewController: UIViewController {
         container.addSubview(addressLabel)
         addressLabel.font = UIFont.systemFont(ofSize: 20)
         addressLabel.textColor = UIColor.black
-        addressLabel.text = "0x..."
+        addressLabel.text = recipientAddress
         addressLabel.snp.makeConstraints { make in
             make.left.equalTo(container).offset(20)
             make.top.equalTo(addressTitleLabel.snp.bottom).offset(10)
@@ -66,7 +71,7 @@ final class ConfirmViewController: UIViewController {
         container.addSubview(amountLabel)
         amountLabel.font = UIFont.systemFont(ofSize: 20)
         amountLabel.textColor = UIColor.black
-        amountLabel.text = "0.0 ETH"
+        amountLabel.text = amount
         amountLabel.snp.makeConstraints { make in
             make.left.equalTo(container).offset(20)
             make.top.equalTo(amountTitleLabel.snp.bottom).offset(10)

@@ -6,12 +6,10 @@ import Foundation
 
 
 final class SendViewController: UIViewController {
+
     let titleName: String
-    init(titleName: String) {
-        self.titleName = titleName
-        super.init(nibName: nil, bundle: nil)
-    }
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    let addressField = UITextField()
+    let amountField = UITextField()
 
     private lazy var container: UIView = {
         let container = UIView()
@@ -19,6 +17,12 @@ final class SendViewController: UIViewController {
 
         return container
     }()
+
+    init(titleName: String) {
+        self.titleName = titleName
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,11 +65,11 @@ final class SendViewController: UIViewController {
             make.top.equalTo(container).offset(100)
         }
 
-        let addressField = UITextField()
         container.addSubview(addressField)
         addressField.font = UIFont.systemFont(ofSize: 20)
         addressField.placeholder = "0x..."
         addressField.borderStyle = .roundedRect
+        addressField.autocapitalizationType = .none
         addressField.snp.makeConstraints { make in
             make.top.equalTo(addressLabel.snp.bottom).offset(10)
             make.left.equalTo(container).offset(20)
@@ -82,11 +86,11 @@ final class SendViewController: UIViewController {
             make.left.equalTo(container).offset(20)
         }
 
-        let amountField = UITextField()
         container.addSubview(amountField)
         amountField.font = UIFont.systemFont(ofSize: 20)
         amountField.placeholder = "0.0 ETH"
         amountField.borderStyle = .roundedRect
+        amountField.autocapitalizationType = .none
         amountField.snp.makeConstraints { make in
             make.top.equalTo(amountLabel.snp.bottom).offset(10)
             make.left.equalTo(container).offset(20)
@@ -101,7 +105,7 @@ final class SendViewController: UIViewController {
     }
 
     @objc func onTappedRightBarButton(sender: UIBarButtonItem) {
-        let vc = ConfirmViewController(titleName: "Confirm")
+        let vc = ConfirmViewController(titleName: "Confirm", recipientAddress: addressField.text!, amount: amountField.text!)
         navigationController?.pushViewController(vc, animated: true)
     }
 
