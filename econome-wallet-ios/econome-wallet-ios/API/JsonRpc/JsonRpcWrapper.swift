@@ -55,6 +55,26 @@ struct EthGetBalance: JSONRPCKit.Request {
     }
 }
 
+struct EthGetGasPrice: JSONRPCKit.Request {
+    typealias Response = String
+
+    var method: String {
+        return "eth_gasPrice"
+    }
+
+    var parameters: Any? {
+        return []
+    }
+
+    func response(from resultObject: Any) throws -> Response {
+        if let response = resultObject as? Response {
+            return response
+        } else {
+            throw CastError(actualValue: resultObject, expectedType: Response.self)
+        }
+    }
+}
+
 struct Erc20TokenGetBalance: JSONRPCKit.Request {
     typealias Response = String
     

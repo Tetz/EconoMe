@@ -4,6 +4,7 @@ import SwiftIconFont
 import KeychainSwift
 import Foundation
 
+
 final class ReceiveViewController: UIViewController {
     let titleName: String
     init(titleName: String) {

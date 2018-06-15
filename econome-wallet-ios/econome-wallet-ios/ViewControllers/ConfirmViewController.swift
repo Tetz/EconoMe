@@ -2,11 +2,14 @@ import UIKit
 import SnapKit
 import SwiftIconFont
 import Foundation
+import APIKit
+import JSONRPCKit
 
 final class ConfirmViewController: UIViewController {
     let titleName: String
     let recipientAddress: String
     let amount: String
+    let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
 
     init(titleName: String, recipientAddress: String, amount: String) {
         self.titleName = titleName
@@ -91,11 +94,28 @@ final class ConfirmViewController: UIViewController {
         container.addSubview(gasLabel)
         gasLabel.font = UIFont.systemFont(ofSize: 20)
         gasLabel.textColor = UIColor.black
-        gasLabel.text = "0.0 ETH"
+        gasLabel.text = "0.0 Gwei"
         gasLabel.snp.makeConstraints { make in
             make.left.equalTo(container).offset(20)
             make.top.equalTo(gasTitleLabel.snp.bottom).offset(10)
         }
+
+        let request = EthGetGasPrice()
+
+        let batch = batchFactory.create(request)
+        let httpRequest = EthServiceRequest(batch: batch)
+
+        Session.send(httpRequest) { result in
+            switch result {
+            case .success(let result):
+                gasLabel.text = String(EthereumHelper().weiToGwei(hex: result)) + " Gwei"
+                print("====== Gas Price ======")
+                print(result)
+            case .failure(let error):
+                print(error)
+            }
+        }
+
 
         // rgb(52, 152, 219)
         let buttonColor = UIColor(red: 52/255.0, green: 152/255.0, blue: 219/255.0, alpha: 1.0)

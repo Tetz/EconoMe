@@ -191,7 +191,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
 
-        // Keystore
+        // Geth JSON RPC
         let request = EthGetBalance(
             address: address!,
             quantity: "latest"
