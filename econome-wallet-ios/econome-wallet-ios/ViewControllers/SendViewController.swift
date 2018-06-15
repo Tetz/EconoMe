@@ -105,8 +105,10 @@ final class SendViewController: UIViewController {
     }
 
     @objc func onTappedRightBarButton(sender: UIBarButtonItem) {
-        let vc = ConfirmViewController(titleName: "Confirm", recipientAddress: addressField.text!, amount: amountField.text!)
-        navigationController?.pushViewController(vc, animated: true)
+        if !addressField.text!.isEmpty || !amountField.text!.isEmpty {
+            let vc = ConfirmViewController(titleName: "Confirm", recipientAddress: addressField.text!, amount: amountField.text!)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
