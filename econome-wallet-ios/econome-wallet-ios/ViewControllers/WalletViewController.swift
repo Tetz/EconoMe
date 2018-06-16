@@ -112,7 +112,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             Session.send(httpRequest) { result in
                 switch result {
                 case .success(let result):
-                    print("===== Success: XOC =====")
+                    print("===== XOC =====")
                     cell.despLab?.text = String(self.ethHelper.tokenNum(hex: result, decimals: decimals))
                     print(result)
                 case .failure(let error):
@@ -209,7 +209,10 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
                 print(error)
             }
         }
-        
+
+        // TODO Geth
+        EtherKeystore().sign()
+
         return walletContent
     }
     

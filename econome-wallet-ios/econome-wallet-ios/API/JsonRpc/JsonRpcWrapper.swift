@@ -105,3 +105,25 @@ struct Erc20TokenGetBalance: JSONRPCKit.Request {
     }
 }
 
+struct EthSendRawTransaction: JSONRPCKit.Request {
+    typealias Response = String
+
+    let signedTx: String
+
+    var method: String {
+        return "eth_sendRawTransaction"
+    }
+
+    var parameters: Any? {
+        return [ signedTx ]
+    }
+
+    func response(from resultObject: Any) throws -> Response {
+        if let response = resultObject as? Response {
+            return response
+        } else {
+            throw CastError(actualValue: resultObject, expectedType: Response.self)
+        }
+    }
+}
+

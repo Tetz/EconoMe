@@ -4,6 +4,7 @@ import SwiftIconFont
 import Foundation
 import APIKit
 import JSONRPCKit
+import Geth
 
 final class ConfirmViewController: UIViewController {
     let titleName: String
@@ -115,7 +116,6 @@ final class ConfirmViewController: UIViewController {
                 print(error)
             }
         }
-
 
         // rgb(52, 152, 219)
         let buttonColor = UIColor(red: 52/255.0, green: 152/255.0, blue: 219/255.0, alpha: 1.0)
