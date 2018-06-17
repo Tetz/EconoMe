@@ -84,9 +84,11 @@ final public class EtherKeystore {
     func sign () {
         print("===== sign() =====")
         let address: String = "0x9aE1f5ADFcc383B1C5a85e7f0BBaD4b768e7D661"
-        let request = EthGetTransactionCount(address: address)
+        let request = EthGetTransactionCount(address: "0xCBe42308bd74b20a183c91E75e7bD72aa705234f")
         let batch = batchFactory.create(request)
         let httpRequest = EthServiceRequest(batch: batch)
+
+        // TODO Encoded Transfer Function
 
         Session.send(httpRequest) { result in
             switch result {
@@ -101,8 +103,8 @@ final public class EtherKeystore {
                         n,
                         toAddress,
                         GethNewBigInt(10000000000000000), // 0.01 Eth
-                        4600000,
-                        GethNewBigInt(30000000000), //  11 Gwei
+                        22000,
+                        GethNewBigInt(1000000000), //  11 Gwei
                         opt
                 )
 
@@ -128,9 +130,9 @@ final public class EtherKeystore {
                 print(account.getAddress().getHex())
 
                 try! keystore.unlock(account, passphrase: "password")
-                let signedTx: GethTransaction = try! keystore.signTxPassphrase(account, passphrase: passphrase, tx: tx, chainID: GethNewBigInt(3))
+                let signedTx: GethTransaction = try! keystore.signTx(account, tx: tx, chainID: GethNewBigInt(3))
                 print("===== signedTx =====")
-                print(signedTx)
+                print(try! signedTx.encodeJSON())
                 // TODO JSON RPC
                 let txStr: String = try! signedTx.encodeRLP().hexEncodedString()
                 print(txStr)
