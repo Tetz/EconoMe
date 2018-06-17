@@ -69,7 +69,6 @@ final public class EtherKeystore {
     }
 
     func getKeystore (keystore: String, passphrase: String, newPassphrase: String) -> GethKeyStore {
-        let data: Data? = keystore.data(using: .utf8)
         let dataDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let keyStorePath = dataDir + "/keystore"
         let keystore: GethKeyStore = GethKeyStore(
@@ -84,44 +83,73 @@ final public class EtherKeystore {
     //
     func sign () {
         print("===== sign() =====")
-        // GethTransaction
-        // public init!(_ nonce: Int64, to: GethAddress!, amount: GethBigInt!, gasLimit: Int64, gasPrice: GethBigInt!, data: Data!)
-        let toAddress = GethAddress(fromHex: "0x9aE1f5ADFcc383B1C5a85e7f0BBaD4b768e7D661")
-        let opt = "0x00".data(using: .utf8)
-        let tx = GethTransaction(
-                1,
-                to: toAddress,
-                amount: GethNewBigInt(10000000000000000), // 0.01 Eth
-                gasLimit: 4600000,
-                gasPrice: GethNewBigInt(20000000000), // 20 Gwei
-                data: opt
-        )
-
-        // GethKeyStore
-        // open func signTxPassphrase(_ account: GethAccount!, passphrase: String!, tx: GethTransaction!, chainID: GethBigInt!) throws -> GethTransaction
-        let keyString = _keychain.get(myKeystore)
-        let keystore: GethKeyStore = getKeystore(keystore: keyString!, passphrase: "password", newPassphrase: "password")
-        let data: Data? = keyString!.data(using: .utf8)
-        let account: GethAccount = try! keystore.importKey(
-                _ : data!,
-                passphrase: "password",
-                newPassphrase: "password"
-        )
-        try! keystore.unlock(account, passphrase: "password")
-        let signedTx: String = try! keystore.signTx(account, tx: tx, chainID: GethNewBigInt(1)).getHash().getHex()
-        print("===== signedTx =====")
-        print(signedTx)
-        let request = EthSendRawTransaction(signedTx: signedTx)
+        let address: String = "0x9aE1f5ADFcc383B1C5a85e7f0BBaD4b768e7D661"
+        let request = EthGetTransactionCount(address: address)
         let batch = batchFactory.create(request)
         let httpRequest = EthServiceRequest(batch: batch)
-        print(httpRequest)
 
         Session.send(httpRequest) { result in
             switch result {
-            case .success(let result):
-                print("===== Success !!! =====")
-                print(result)
+            case .success(let nonce):
+                print("===== nonce !!! =====")
+                print(strtoul(nonce, nil, 16))
+                let n: Int64 = Int64(strtoul(nonce, nil, 16))
+                // public func GethNewTransaction(_ nonce: Int64, _ to: GethAddress!, _ amount: GethBigInt!, _ gasLimit: Int64, _ gasPrice: GethBigInt!, _ data: Data!) -> GethTransaction!
+                let toAddress = GethAddress(fromHex: address)
+                let opt = "0x00".data(using: .utf8)
+                let tx: GethTransaction? = GethNewTransaction(
+                        n,
+                        toAddress,
+                        GethNewBigInt(10000000000000000), // 0.01 Eth
+                        4600000,
+                        GethNewBigInt(30000000000), //  11 Gwei
+                        opt
+                )
+
+                // GethKeyStore
+                // open func signTxPassphrase(_ account: GethAccount!, passphrase: String!, tx: GethTransaction!, chainID: GethBigInt!) throws -> GethTransaction
+                let passphrase = "password"
+                let newPassphrase = passphrase
+                let keystoreStr: String? = self._keychain.get(self.myKeystore)
+                let data: Data? = keystoreStr!.data(using: .utf8)
+                let dataDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                let keyStorePath = dataDir + "/keystore"
+                let keystore: GethKeyStore = GethKeyStore(
+                        keyStorePath,
+                        scryptN: GethLightScryptN,
+                        scryptP: GethLightScryptP
+                )
+
+                let account: GethAccount = try! keystore.importKey(
+                        _ : data!,
+                        passphrase: passphrase,
+                        newPassphrase: newPassphrase
+                )
+                print(account.getAddress().getHex())
+
+                try! keystore.unlock(account, passphrase: "password")
+                let signedTx: GethTransaction = try! keystore.signTxPassphrase(account, passphrase: passphrase, tx: tx, chainID: GethNewBigInt(3))
+                print("===== signedTx =====")
+                print(signedTx)
+                // TODO JSON RPC
+                let txStr: String = try! signedTx.encodeRLP().hexEncodedString()
+                print(txStr)
+                let request = EthSendRawTransaction(signedTx: "0x" + txStr)
+                let batch = self.batchFactory.create(request)
+                let httpRequest = EthServiceRequest(batch: batch)
+                print(httpRequest)
+
+                Session.send(httpRequest) { result in
+                    switch result {
+                    case .success(let result):
+                        print("===== Success !!! =====")
+                        print(result)
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
             case .failure(let error):
+                print("===== error nounce !!! =====")
                 print(error)
             }
         }
@@ -145,4 +173,36 @@ final public class EtherKeystore {
 //        print(result.string())
 //    }
     
+}
+
+extension Data {
+    struct HexEncodingOptions: OptionSet {
+        let rawValue: Int
+        static let upperCase = HexEncodingOptions(rawValue: 1 << 0)
+    }
+
+    func hexEncodedString(options: HexEncodingOptions = []) -> String {
+        let format = options.contains(.upperCase) ? "%02X" : "%02x"
+        return map { String(format: format, $0) }.joined()
+    }
+
+}
+
+extension String {
+    public func stripHexPrefix() -> String {
+        var hex = self
+        let prefix = "0x"
+        if hex.hasPrefix(prefix) {
+            hex = String(hex.dropFirst(prefix.count))
+        }
+        return hex
+    }
+
+    public func addHexPrefix() -> String {
+        return "0x".appending(self)
+    }
+
+    public func toHexString() -> String {
+        return data(using: .utf8)!.map { String(format: "%02x", $0) }.joined()
+    }
 }

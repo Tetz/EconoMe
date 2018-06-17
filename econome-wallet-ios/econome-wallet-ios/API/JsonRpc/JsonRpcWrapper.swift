@@ -105,6 +105,29 @@ struct Erc20TokenGetBalance: JSONRPCKit.Request {
     }
 }
 
+struct EthGetTransactionCount: JSONRPCKit.Request {
+    typealias Response = String
+
+    let address: String
+
+    var method: String {
+        return "eth_getTransactionCount"
+    }
+
+    var parameters: Any? {
+        return [ address, "latest" ]
+    }
+
+    func response(from resultObject: Any) throws -> Response {
+        if let response = resultObject as? Response {
+            return response
+        } else {
+            throw CastError(actualValue: resultObject, expectedType: Response.self)
+        }
+    }
+}
+
+
 struct EthSendRawTransaction: JSONRPCKit.Request {
     typealias Response = String
 
