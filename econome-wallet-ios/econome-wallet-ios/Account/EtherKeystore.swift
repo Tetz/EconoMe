@@ -68,7 +68,7 @@ final public class EtherKeystore {
         return account
     }
 
-    func getKeystore (keystore: String, passphrase: String, newPassphrase: String) -> GethKeyStore {
+    func getKeystore (keystore: String) -> GethKeyStore {
         let dataDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let keyStorePath = dataDir + "/keystore"
         let keystore: GethKeyStore = GethKeyStore(
@@ -80,7 +80,6 @@ final public class EtherKeystore {
         return keystore
     }
 
-    //
     func sign () {
         print("===== sign() =====")
         let address: String = "0x9aE1f5ADFcc383B1C5a85e7f0BBaD4b768e7D661"
@@ -94,7 +93,6 @@ final public class EtherKeystore {
                 print("===== nonce !!! =====")
                 print(strtoul(nonce, nil, 16))
                 let n: Int64 = Int64(strtoul(nonce, nil, 16))
-                // public func GethNewTransaction(_ nonce: Int64, _ to: GethAddress!, _ amount: GethBigInt!, _ gasLimit: Int64, _ gasPrice: GethBigInt!, _ data: Data!) -> GethTransaction!
                 let toAddress = GethAddress(fromHex: address)
                 let opt = "0x00".data(using: .utf8)
                 let tx: GethTransaction? = GethNewTransaction(
@@ -107,7 +105,6 @@ final public class EtherKeystore {
                 )
 
                 // GethKeyStore
-                // open func signTxPassphrase(_ account: GethAccount!, passphrase: String!, tx: GethTransaction!, chainID: GethBigInt!) throws -> GethTransaction
                 let passphrase = "password"
                 let newPassphrase = passphrase
                 let keystoreStr: String? = self._keychain.get(self.myKeystore)
@@ -131,7 +128,6 @@ final public class EtherKeystore {
                 let signedTx: GethTransaction = try! keystore.signTx(account, tx: tx, chainID: GethNewBigInt(3))
                 print("===== signedTx =====")
                 print(try! signedTx.encodeJSON())
-                // TODO JSON RPC
                 let txStr: String = try! signedTx.encodeRLP().hexEncodedString()
                 print(txStr)
                 let request = EthSendRawTransaction(signedTx: txStr.addHexPrefix())
