@@ -20,11 +20,7 @@ final public class EtherKeystore {
 
         // Check if given keys exist in Keychain
         if address == nil || keystore == nil {
-            // Keystore
-            let dataDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-            let keyStorePath = dataDir + "/keystore"
-            let keyStoreManager = GethNewKeyStore(keyStorePath, GethLightScryptN, GethLightScryptP)
-            let account = try! keyStoreManager?.newAccount("password")
+            let account = EthAccountCoordinator().createAccount(EthAccountConfiguration.default.password!)
             let newAddress = account?.getAddress().getHex()
             print("newAddress: \(newAddress!)")
             

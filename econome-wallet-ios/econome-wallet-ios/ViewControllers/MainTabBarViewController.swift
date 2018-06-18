@@ -1,5 +1,6 @@
 import UIKit
 import SwiftIconFont
+import Geth
 
 final class MainTabBarViewController: UITabBarController {
     
@@ -7,10 +8,9 @@ final class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
         self.removeTabbarItemsText()
         
-        // Load Wallet 
-        let etherKeystore: EtherKeystore = EtherKeystore()
-        etherKeystore.createWalletIfNotExists()
-        
+        // Create Keystore if not exists
+        LaunchManger()
+
         // UI TabBarItem
         // Release version 2.0
         // let airdropViewController = AirdropViewController(titleName: "Airdrop")

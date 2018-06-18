@@ -4,6 +4,7 @@ import APIKit
 import JSONRPCKit
 import SwiftIconFont
 import KeychainSwift
+import Geth
 
 final class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -16,8 +17,8 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
-    let ethHelper = EthereumHelper()
-    
+    let (_, account) = EthAccountCoordinator().launch(EthAccountConfiguration.default)
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = UIColor.white
@@ -43,6 +44,9 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         // Navigation Bar
         navigationItem.title = titleName
+
+        let address: String? = account!.getAddress().getHex()
+        print("Wallet Address: \(address!)")
         
         // Release version 1.0
         // let infoImg = UIImage(from: .fontAwesome, code: "envelopeo", backgroundColor: .clear, size: CGSize(width: 30, height: 30))
@@ -66,9 +70,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TokenListCell", for: indexPath) as! TokenListCell
 
-        // Keystore
-        let keychain = KeychainSwift()
-        let address: String? = keychain.get(EtherKeystore().myEtherAddress)
+        let address: String? = account!.getAddress().getHex()
 
         if (indexPath.row == 0) {
             cell.titleLab?.text = "ETH"
@@ -85,9 +87,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             Session.send(httpRequest) { result in
                 switch result {
                 case .success(let result):
-                    print("=== ETH ===")
-                    print(result)
-                    cell.despLab?.text = String(self.ethHelper.weiToEth(hex: result))
+                    cell.despLab?.text = String(EthereumHelper().weiToEth(hex: result))
                 case .failure(let error):
                     print(error)
                 }
@@ -112,9 +112,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             Session.send(httpRequest) { result in
                 switch result {
                 case .success(let result):
-                    print("===== XOC =====")
-                    cell.despLab?.text = String(self.ethHelper.tokenNum(hex: result, decimals: decimals))
-                    print(result)
+                    cell.despLab?.text = String(EthereumHelper().tokenNum(hex: result, decimals: decimals))
                 case .failure(let error):
                     print(error)
                 }
@@ -166,9 +164,8 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             make.left.equalTo(walletImageView).offset(20)
             make.centerY.equalTo(walletImageView)
         }
-        
-        let keychain = KeychainSwift()
-        let address: String? = keychain.get(EtherKeystore().myEtherAddress)
+
+        let address: String? = account!.getAddress().getHex()
         let walletAddress = UILabel()
         walletImageView.addSubview(walletAddress)
         walletAddress.text = address
@@ -203,7 +200,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         Session.send(httpRequest) { result in
             switch result {
             case .success(let result):
-                let assets = String(format: "%.2f", self.ethHelper.weiToEth(hex: result) * tokenPrice)
+                let assets = String(format: "%.2f", EthereumHelper().weiToEth(hex: result) * tokenPrice)
                 walletAssetsAmount.text = "¥ \(assets)"
             case .failure(let error):
                 print(error)
@@ -211,7 +208,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         }
 
         // TODO Geth
-        EtherKeystore().sign()
+        // EtherKeystore().sign()
 
         return walletContent
     }

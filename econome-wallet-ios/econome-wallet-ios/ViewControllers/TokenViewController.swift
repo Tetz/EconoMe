@@ -4,6 +4,7 @@ import APIKit
 import JSONRPCKit
 import SwiftIconFont
 import KeychainSwift
+import Geth
 
 final class TokenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,6 +18,7 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
 
     let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
     let ethHelper = EthereumHelper()
+    let (_, account) = EthAccountCoordinator().launch(EthAccountConfiguration.default)
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -139,8 +141,7 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         // Keystore
-        let keychain = KeychainSwift()
-        let address: String? = keychain.get(EtherKeystore().myEtherAddress)
+        let address: String? = account!.getAddress().getHex()
         let request = EthGetBalance(
                 address: address!,
                 quantity: "latest"
