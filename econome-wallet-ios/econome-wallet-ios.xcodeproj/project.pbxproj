@@ -51,7 +51,9 @@
 		2BDAFDC3E37273A3F93057AC /* Pods_econome_wallet_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F9378BA06CF7D32A7EF960 /* Pods_econome_wallet_iosUITests.framework */; };
 		742C0DEDC0E7ACE5FA1C4A54 /* TokenDataApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435CFDAB6E7B7F3ACCED00A /* TokenDataApi.swift */; };
 		7435DADBCDA1CF47CBD37097 /* EthereumHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74946259FB9E10A87804A912 /* EthereumHelper.swift */; };
+		74488159A974AC8BBB7889E9 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A8D92EE418E194E241D9D /* String+Extention.swift */; };
 		744AB681C53568A345D538B6 /* TokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6359EBD567674DDE08F1F /* TokenViewController.swift */; };
+		745554B8F98A66D326B1CDC5 /* Data+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F4C06F5A9F4DC0DE6D818 /* Data+Extention.swift */; };
 		74910DA6EA3388E6F04EB064 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7424A875F10F758E22CFB542 /* ConfirmViewController.swift */; };
 		74C02A380FA40E2AF920C223 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413A924F96D79286DFBECF4 /* ReceiveViewController.swift */; };
 		74D065B8CC7F2B09CE195D9C /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7411C755FA435910E3F7F470 /* SendViewController.swift */; };
@@ -137,7 +139,9 @@
 		7413A924F96D79286DFBECF4 /* ReceiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		7424A875F10F758E22CFB542 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		7435CFDAB6E7B7F3ACCED00A /* TokenDataApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenDataApi.swift; sourceTree = "<group>"; };
+		744F4C06F5A9F4DC0DE6D818 /* Data+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extention.swift"; sourceTree = "<group>"; };
 		74946259FB9E10A87804A912 /* EthereumHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumHelper.swift; sourceTree = "<group>"; };
+		749A8D92EE418E194E241D9D /* String+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
 		74A6359EBD567674DDE08F1F /* TokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenViewController.swift; sourceTree = "<group>"; };
 		AE8C360178DCE3C6D3EF6250 /* Pods-econome-wallet-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosUITests/Pods-econome-wallet-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D00E25240DC3FF9E12A24148 /* Pods-econome-wallet-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosTests/Pods-econome-wallet-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -302,6 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				13E98D8120BD886600E50EC8 /* UIImage+Extention.swift */,
+				744F4C06F5A9F4DC0DE6D818 /* Data+Extention.swift */,
+				749A8D92EE418E194E241D9D /* String+Extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -634,6 +640,8 @@
 				74D065B8CC7F2B09CE195D9C /* SendViewController.swift in Sources */,
 				74910DA6EA3388E6F04EB064 /* ConfirmViewController.swift in Sources */,
 				74C02A380FA40E2AF920C223 /* ReceiveViewController.swift in Sources */,
+				745554B8F98A66D326B1CDC5 /* Data+Extention.swift in Sources */,
+				74488159A974AC8BBB7889E9 /* String+Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

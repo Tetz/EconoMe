@@ -88,8 +88,6 @@ final public class EtherKeystore {
         let batch = batchFactory.create(request)
         let httpRequest = EthServiceRequest(batch: batch)
 
-        // TODO Encoded Transfer Function
-
         Session.send(httpRequest) { result in
             switch result {
             case .success(let nonce):
@@ -136,7 +134,7 @@ final public class EtherKeystore {
                 // TODO JSON RPC
                 let txStr: String = try! signedTx.encodeRLP().hexEncodedString()
                 print(txStr)
-                let request = EthSendRawTransaction(signedTx: "0x" + txStr)
+                let request = EthSendRawTransaction(signedTx: txStr.addHexPrefix())
                 let batch = self.batchFactory.create(request)
                 let httpRequest = EthServiceRequest(batch: batch)
                 print(httpRequest)
@@ -151,60 +149,11 @@ final public class EtherKeystore {
                     }
                 }
             case .failure(let error):
-                print("===== error nounce !!! =====")
+                print("===== error nonce !!! =====")
                 print(error)
             }
         }
 
     }
-
-    // TODO FIXME
-//    func getBalance () {
-//        let keyString = _keychain.get(myKeystore)
-//        let account = importWalletByKeystore(keystore: keyString!, passphrase: "password", newPassphrase: "password").getAddress()
-//
-//        let geth = GethEthereumClient("https://ropsten.infura.io/xyji23ngACpAtbvoO0MZ")
-//        let ctx: GethContext = GethContext()
-//        let number: Int64 = 18
-//
-//        // open func getBalanceAt(_ ctx: GethContext!, account: GethAddress!, number: Int64) throws -> GethBigInt
-//        let result = try! geth!.getBalanceAt(ctx, account: account, number: number)
-//
-//        print("======= getBalance =======")
-//        print(account!.getHex())
-//        print(result.string())
-//    }
-    
 }
 
-extension Data {
-    struct HexEncodingOptions: OptionSet {
-        let rawValue: Int
-        static let upperCase = HexEncodingOptions(rawValue: 1 << 0)
-    }
-
-    func hexEncodedString(options: HexEncodingOptions = []) -> String {
-        let format = options.contains(.upperCase) ? "%02X" : "%02x"
-        return map { String(format: format, $0) }.joined()
-    }
-
-}
-
-extension String {
-    public func stripHexPrefix() -> String {
-        var hex = self
-        let prefix = "0x"
-        if hex.hasPrefix(prefix) {
-            hex = String(hex.dropFirst(prefix.count))
-        }
-        return hex
-    }
-
-    public func addHexPrefix() -> String {
-        return "0x".appending(self)
-    }
-
-    public func toHexString() -> String {
-        return data(using: .utf8)!.map { String(format: "%02x", $0) }.joined()
-    }
-}
