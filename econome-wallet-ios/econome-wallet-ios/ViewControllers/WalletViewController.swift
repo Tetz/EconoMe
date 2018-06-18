@@ -189,10 +189,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         }
 
         // Geth JSON RPC
-        let request = EthGetBalance(
-            address: address!,
-            quantity: "latest"
-        )
+        let request = EthGetBalance(address: address!, quantity: "latest")
         
         let batch = batchFactory.create(request)
         let httpRequest = EthServiceRequest(batch: batch)
@@ -208,7 +205,8 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         }
 
         // TODO Geth
-        Ether().sendTransaction()
+        let to = "0x9aE1f5ADFcc383B1C5a85e7f0BBaD4b768e7D661"
+        Ether().sendTransaction(to: to, amount: GethNewBigInt(10000000000000000))
 
         return walletContent
     }
