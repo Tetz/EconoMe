@@ -55,8 +55,8 @@
 		74488159A974AC8BBB7889E9 /* String+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A8D92EE418E194E241D9D /* String+Extentions.swift */; };
 		744AB681C53568A345D538B6 /* TokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A6359EBD567674DDE08F1F /* TokenViewController.swift */; };
 		745554B8F98A66D326B1CDC5 /* Data+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F4C06F5A9F4DC0DE6D818 /* Data+Extentions.swift */; };
-		74734AC3B580040BB7820CAF /* EtherKeystore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BF055897F5F5523A889403 /* EtherKeystore.swift */; };
 		74910DA6EA3388E6F04EB064 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7424A875F10F758E22CFB542 /* ConfirmViewController.swift */; };
+		74A1190D66DC1ABB04FD8DD9 /* Ether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F3F55DEF21273C47BD10F1 /* Ether.swift */; };
 		74C02A380FA40E2AF920C223 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413A924F96D79286DFBECF4 /* ReceiveViewController.swift */; };
 		74D065B8CC7F2B09CE195D9C /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7411C755FA435910E3F7F470 /* SendViewController.swift */; };
 		CD5CBB3C79AE352790460D40 /* Pods_econome_wallet_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3A84CD3215D6BFDC6CC9B0 /* Pods_econome_wallet_iosTests.framework */; };
@@ -145,8 +145,8 @@
 		7455A419B0C22B225A97CC0B /* EthereumHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumHelper.swift; sourceTree = "<group>"; };
 		749A8D92EE418E194E241D9D /* String+Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extentions.swift"; sourceTree = "<group>"; };
 		74A6359EBD567674DDE08F1F /* TokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenViewController.swift; sourceTree = "<group>"; };
-		74BF055897F5F5523A889403 /* EtherKeystore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EtherKeystore.swift; sourceTree = "<group>"; };
 		74E28F8A63BDA805E4452292 /* LaunchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchManager.swift; sourceTree = "<group>"; };
+		74F3F55DEF21273C47BD10F1 /* Ether.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ether.swift; sourceTree = "<group>"; };
 		AE8C360178DCE3C6D3EF6250 /* Pods-econome-wallet-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosUITests/Pods-econome-wallet-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D00E25240DC3FF9E12A24148 /* Pods-econome-wallet-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-iosTests/Pods-econome-wallet-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA08CBDE761FC1494AD36A58 /* Pods-econome-wallet-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-econome-wallet-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-econome-wallet-ios/Pods-econome-wallet-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -284,6 +284,7 @@
 				13E98D4520BD7FF700E50EC8 /* Info.plist */,
 				74EE910CB5E9919BE3A35EB6 /* Account */,
 				74CDD00DD9DB32785E4A29FF /* Helpers */,
+				74B5095436497D5AC90BD022 /* Crypto */,
 			);
 			path = "econome-wallet-ios";
 			sourceTree = "<group>";
@@ -339,6 +340,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		74B5095436497D5AC90BD022 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				74F3F55DEF21273C47BD10F1 /* Ether.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
 		74CDD00DD9DB32785E4A29FF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,7 +359,6 @@
 		74EE910CB5E9919BE3A35EB6 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				74BF055897F5F5523A889403 /* EtherKeystore.swift */,
 				7423B9C24F35CBE3E722FA68 /* EthAccountCoordinator.swift */,
 				74E28F8A63BDA805E4452292 /* LaunchManager.swift */,
 			);
@@ -662,10 +670,10 @@
 				74C02A380FA40E2AF920C223 /* ReceiveViewController.swift in Sources */,
 				745554B8F98A66D326B1CDC5 /* Data+Extentions.swift in Sources */,
 				74488159A974AC8BBB7889E9 /* String+Extentions.swift in Sources */,
-				74734AC3B580040BB7820CAF /* EtherKeystore.swift in Sources */,
 				74136FEF04CA336372473730 /* EthereumHelper.swift in Sources */,
 				740FED88E52418D47397B583 /* EthAccountCoordinator.swift in Sources */,
 				742212A49B67328B52E36080 /* LaunchManager.swift in Sources */,
+				74A1190D66DC1ABB04FD8DD9 /* Ether.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

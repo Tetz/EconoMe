@@ -208,7 +208,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         }
 
         // TODO Geth
-        // EtherKeystore().sign()
+        Ether().sendTransaction()
 
         return walletContent
     }

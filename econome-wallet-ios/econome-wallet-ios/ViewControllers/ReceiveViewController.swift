@@ -14,7 +14,7 @@ final class ReceiveViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     var addBtn: UIBarButtonItem!
-    var address: String?
+    let (_, account) = EthAccountCoordinator().launch(EthAccountConfiguration.default)
 
     private lazy var container: UIView = {
         let container = UIView()
@@ -54,7 +54,7 @@ final class ReceiveViewController: UIViewController {
         }
 
         let keychain = KeychainSwift()
-        self.address = keychain.get(EtherKeystore().myEtherAddress)
+        let address = account!.getAddress().getHex()
         let walletAddress = UILabel()
         container.addSubview(walletAddress)
         walletAddress.text = address
@@ -89,6 +89,7 @@ final class ReceiveViewController: UIViewController {
     @objc func onTappedCopyButton(_: AnyObject) {
         // Clipboard
         let pasteboard: UIPasteboard = UIPasteboard.general
+        let address = account!.getAddress().getHex()
         pasteboard.string = address!
         print(address!)
     }
