@@ -17,6 +17,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
+    let converter = EthereumHelper()
     let (_, account) = EthAccountCoordinator().launch(EthAccountConfiguration.default)
 
     private lazy var tableView: UITableView = {
@@ -87,7 +88,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             Session.send(httpRequest) { result in
                 switch result {
                 case .success(let result):
-                    cell.despLab?.text = String(EthereumHelper().weiToEth(hex: result))
+                    cell.despLab?.text = String(EthereumHelper().weiToEth(result))
                 case .failure(let error):
                     print(error)
                 }
@@ -112,7 +113,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             Session.send(httpRequest) { result in
                 switch result {
                 case .success(let result):
-                    cell.despLab?.text = String(EthereumHelper().tokenNum(hex: result, decimals: decimals))
+                    cell.despLab?.text = String(EthereumHelper().tokenNum(result, decimals: decimals))
                 case .failure(let error):
                     print(error)
                 }
@@ -197,16 +198,12 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         Session.send(httpRequest) { result in
             switch result {
             case .success(let result):
-                let assets = String(format: "%.2f", EthereumHelper().weiToEth(hex: result) * tokenPrice)
+                let assets = String(format: "%.2f", EthereumHelper().weiToEth(result) * tokenPrice)
                 walletAssetsAmount.text = "¥ \(assets)"
             case .failure(let error):
                 print(error)
             }
         }
-
-        // TODO Geth
-        let to = "0x9aE1f5ADFcc383B1C5a85e7f0BBaD4b768e7D661"
-        Ether().sendTransaction(to: to, amount: GethNewBigInt(10000000000000000))
 
         return walletContent
     }

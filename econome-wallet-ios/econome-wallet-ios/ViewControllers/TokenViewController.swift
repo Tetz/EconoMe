@@ -153,7 +153,7 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
         Session.send(httpRequest) { result in
             switch result {
             case .success(let result):
-                let assets = String(format: "%.2f", self.ethHelper.weiToEth(hex: result))
+                let assets = String(format: "%.2f", self.ethHelper.weiToEth(result))
                 tokenAssetsLabel.text = "\(assets) ETH"
             case .failure(let error):
                 print(error)

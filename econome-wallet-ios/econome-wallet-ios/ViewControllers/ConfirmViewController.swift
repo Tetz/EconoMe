@@ -109,8 +109,7 @@ final class ConfirmViewController: UIViewController {
         Session.send(httpRequest) { result in
             switch result {
             case .success(let result):
-                gasLabel.text = String(EthereumHelper().weiToGwei(hex: result)) + " Gwei"
-                print("====== Gas Price ======")
+                gasLabel.text = String(EthereumHelper().weiToGwei(result)) + " Gwei"
                 print(result)
             case .failure(let error):
                 print(error)
@@ -134,6 +133,11 @@ final class ConfirmViewController: UIViewController {
     }
 
     @objc private func buttonTapped(_: UIButton) {
+        print("===== amountAsDouble =======")
+        let amountAsDouble: Double = (amount as NSString).doubleValue
+        let amountAsBigInt = EthereumHelper().ethToWei(amountAsDouble)
+
+        Ether().sendTransaction(to: recipientAddress, amount: amountAsBigInt)
         self.dismiss(animated: true, completion: nil)
     }
 
