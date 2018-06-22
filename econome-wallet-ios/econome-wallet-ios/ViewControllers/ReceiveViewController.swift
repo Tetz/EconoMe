@@ -53,7 +53,6 @@ final class ReceiveViewController: UIViewController {
             make.centerX.equalTo(container)
         }
 
-        let keychain = KeychainSwift()
         let address = account!.getAddress().getHex()
         let walletAddress = UILabel()
         container.addSubview(walletAddress)

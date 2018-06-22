@@ -19,6 +19,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
     let converter = EthereumHelper()
     let (_, account) = EthAccountCoordinator().launch(EthAccountConfiguration.default)
+    var timer = Timer()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -39,8 +40,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         
         return tableView
     }()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Navigation Bar
@@ -48,11 +48,11 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
 
         let address: String? = account!.getAddress().getHex()
         print("Wallet Address: \(address!)")
-        
+
         // Release version 1.0
         // let infoImg = UIImage(from: .fontAwesome, code: "envelopeo", backgroundColor: .clear, size: CGSize(width: 30, height: 30))
         // navigationItem.rightBarButtonItem = UIBarButtonItem(image: infoImg, style: .plain, target: self, action: #selector(onTappedRightBarButton))
-        
+
         tableView.frame = CGRect(
             x: 0,
             y: statusBarHeight,
@@ -61,13 +61,15 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         )
         tableView.delegate = self
         tableView.dataSource = self
+
         self.view.addSubview(tableView)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TokenListCell", for: indexPath) as! TokenListCell
 
@@ -155,7 +157,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             make.centerX.equalTo(walletContent)
             make.centerY.equalTo(walletContent)
         }
-        
+
         let walletAssetsAmount = UILabel()
         walletImageView.addSubview(walletAssetsAmount)
         walletAssetsAmount.text = "¥ N/A"
@@ -212,6 +214,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
         let vc = InfoViewController(titleName: "Information")
         navigationController?.pushViewController(vc, animated: true)
     }
+
 
 }
 
