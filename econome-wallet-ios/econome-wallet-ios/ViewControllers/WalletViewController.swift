@@ -131,7 +131,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Index path of the tapped cell: \(indexPath.row)")
-        let vc = TokenViewController(titleName: "Ethereum (ETH)")
+        let vc = TokenViewController(index: indexPath.row)
         navigationController?.pushViewController(vc, animated: true)
     }
     

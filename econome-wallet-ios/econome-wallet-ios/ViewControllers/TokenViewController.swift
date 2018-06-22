@@ -9,9 +9,16 @@ import Geth
 final class TokenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let statusBarHeight = UIApplication.shared.statusBarFrame.height
-    let titleName: String
-    init(titleName: String) {
-        self.titleName = titleName
+    let index: Int
+    var titleName: String
+    init(index: Int) {
+        self.index = index
+        self.titleName = "Ethereum"
+        if index == 0 {
+            self.titleName = "Ethereum(ETH)"
+        } else if index == 1 {
+            self.titleName = "OTAKU COIN(XOC)"
+        }
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
