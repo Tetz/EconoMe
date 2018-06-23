@@ -100,7 +100,7 @@ final class WalletViewController: UIViewController, UITableViewDelegate, UITable
             cell.despLab?.text = "N/A"
 
             // Remove 0x prefix
-            let addressWithoutPrefix = address!.dropFirst(2)
+            let addressWithoutPrefix = address!.removeHexPrefix()
             let decimals: Double = 2
 
             let request = Erc20TokenGetBalance(

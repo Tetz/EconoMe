@@ -1,7 +1,7 @@
 import Foundation
 
 extension String {
-    public func stripHexPrefix() -> String {
+    public func removeHexPrefix() -> String {
         var hex = self
         let prefix = "0x"
         if hex.hasPrefix(prefix) {

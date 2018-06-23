@@ -173,7 +173,7 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
             }
         } else if (index == 1) {
             // Remove 0x prefix
-            let addressWithoutPrefix = address!.dropFirst(2)
+            let addressWithoutPrefix = address!.removeHexPrefix()
             let decimals: Double = 2
 
             let request = Erc20TokenGetBalance(
