@@ -11,13 +11,16 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
     let statusBarHeight = UIApplication.shared.statusBarFrame.height
     let index: Int
     var titleName: String
+    var contractAddress: String
     init(index: Int) {
         self.index = index
         self.titleName = "Ethereum"
+        self.contractAddress = ""
         if index == 0 {
             self.titleName = "Ethereum(ETH)"
         } else if index == 1 {
             self.titleName = "OTAKU COIN(XOC)"
+            self.contractAddress = "0x98cd8de75f15ceb40a8e8a5f19f19a6f943373f4"
         }
         super.init(nibName: nil, bundle: nil)
     }
@@ -147,23 +150,49 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
             make.width.greaterThanOrEqualTo(buttonWidth)
         }
 
-        // Keystore
+        // TODO
         let address: String? = account!.getAddress().getHex()
-        let request = EthGetBalance(
-                address: address!,
-                quantity: "latest"
-        )
 
-        let batch = batchFactory.create(request)
-        let httpRequest = EthServiceRequest(batch: batch)
+        if (index == 0) {
+            let request = EthGetBalance(
+                    address: address!,
+                    quantity: "latest"
+            )
 
-        Session.send(httpRequest) { result in
-            switch result {
-            case .success(let result):
-                let assets = String(format: "%.2f", self.ethHelper.weiToEth(result))
-                tokenAssetsLabel.text = "\(assets) ETH"
-            case .failure(let error):
-                print(error)
+            let batch = batchFactory.create(request)
+            let httpRequest = EthServiceRequest(batch: batch)
+
+            Session.send(httpRequest) { result in
+                switch result {
+                case .success(let result):
+                    let assets = String(EthereumHelper().weiToEth(result))
+                    tokenAssetsLabel.text = "\(assets) ETH"
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        } else if (index == 1) {
+            // Remove 0x prefix
+            let addressWithoutPrefix = address!.dropFirst(2)
+            let decimals: Double = 2
+
+            let request = Erc20TokenGetBalance(
+                    to: "0x98cd8de75f15ceb40a8e8a5f19f19a6f943373f4",
+                    data: "0x70a08231000000000000000000000000" + addressWithoutPrefix,
+                    quantity: "latest"
+            )
+
+            let batch = batchFactory.create(request)
+            let httpRequest = EthServiceRequest(batch: batch)
+
+            Session.send(httpRequest) { result in
+                switch result {
+                case .success(let result):
+                    let assets = String(EthereumHelper().tokenNum(result, decimals: decimals))
+                    tokenAssetsLabel.text = "\(assets) XOC"
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
 
