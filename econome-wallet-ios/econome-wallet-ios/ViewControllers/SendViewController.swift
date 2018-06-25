@@ -10,6 +10,7 @@ final class SendViewController: UIViewController {
     let titleName: String
     let addressField = UITextField()
     let amountField = UITextField()
+    let tokenIndex: Int
 
     private lazy var container: UIView = {
         let container = UIView()
@@ -18,8 +19,9 @@ final class SendViewController: UIViewController {
         return container
     }()
 
-    init(titleName: String) {
+    init(titleName: String, tokenIndex: Int) {
         self.titleName = titleName
+        self.tokenIndex = tokenIndex
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -106,7 +108,12 @@ final class SendViewController: UIViewController {
 
     @objc func onTappedRightBarButton(sender: UIBarButtonItem) {
         if !addressField.text!.isEmpty || !amountField.text!.isEmpty {
-            let vc = ConfirmViewController(titleName: "Confirm", recipientAddress: addressField.text!, amount: amountField.text!)
+            let vc = ConfirmViewController(
+                    titleName: "Confirm",
+                    recipientAddress: addressField.text!,
+                    amount: amountField.text!,
+                    tokenIndex: tokenIndex
+            )
             navigationController?.pushViewController(vc, animated: true)
         }
     }

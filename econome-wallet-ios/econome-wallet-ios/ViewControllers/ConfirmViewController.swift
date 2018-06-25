@@ -10,12 +10,14 @@ final class ConfirmViewController: UIViewController {
     let titleName: String
     let recipientAddress: String
     let amount: String
+    let tokenIndex: Int
     let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
 
-    init(titleName: String, recipientAddress: String, amount: String) {
+    init(titleName: String, recipientAddress: String, amount: String, tokenIndex: Int) {
         self.titleName = titleName
         self.recipientAddress = recipientAddress
         self.amount = amount
+        self.tokenIndex = tokenIndex
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -137,7 +139,9 @@ final class ConfirmViewController: UIViewController {
         let amountAsDouble: Double = (amount as NSString).doubleValue
         let amountAsBigInt = EthereumHelper().ethToWei(amountAsDouble)
 
-        Ether().sendTransaction(to: recipientAddress, amount: amountAsBigInt)
+        //Ether().sendTransaction(to: recipientAddress, amount: amountAsBigInt)
+        Erc20Token().sendTransaction(to: "0x9aE1f5ADFcc383B1C5a85e7f0BBaD4b768e7D661", amount: GethNewBigInt(100))
+
         self.dismiss(animated: true, completion: nil)
     }
 

@@ -200,7 +200,7 @@ final class TokenViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     @objc private func onTappedSendButton(_: UIButton) {
-        let vc = SendViewController(titleName: "Send")
+        let vc = SendViewController(titleName: "Send", tokenIndex: index)
         let nav = UINavigationController(rootViewController: vc)
         self.present(nav, animated: true, completion: nil)
     }
