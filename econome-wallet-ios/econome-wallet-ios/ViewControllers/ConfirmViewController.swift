@@ -139,8 +139,11 @@ final class ConfirmViewController: UIViewController {
         let amountAsDouble: Double = (amount as NSString).doubleValue
         let amountAsBigInt = EthereumHelper().ethToWei(amountAsDouble)
 
-        //Ether().sendTransaction(to: recipientAddress, amount: amountAsBigInt)
-        Erc20Token().sendTransaction(to: "0x9aE1f5ADFcc383B1C5a85e7f0BBaD4b768e7D661", amount: GethNewBigInt(100))
+        if tokenIndex == 0 {
+            Ether().sendTransaction(to: recipientAddress, amount: amountAsBigInt)
+        } else {
+            Erc20Token().sendTransaction(to: "0x9aE1f5ADFcc383B1C5a85e7f0BBaD4b768e7D661", amount: GethNewBigInt(100))
+        }
 
         self.dismiss(animated: true, completion: nil)
     }
