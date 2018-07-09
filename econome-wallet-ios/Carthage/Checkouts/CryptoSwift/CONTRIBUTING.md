@@ -1,6 +1,5 @@
 By submitting a pull request, you represent that you have the right to license
-your contribution to Marcin Krzyżanowski and the community, and agree by submitting the patch
-that your contributions are licensed under the CryptoSwift project license.
+your contribution to Marcin Krzyżanowski and the community, and agree by submitting the patch that your contributions are licensed under the CryptoSwift project license.
 
 ---
 
@@ -14,7 +13,7 @@ For new files, please use the correct file header:
 //
 //  CryptoSwift
 //
-//  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
+//  Copyright (C) Marcin Krzyżanowski <marcin@krzyzanowskim.com>
 //  This software is provided 'as-is', without any express or implied warranty.
 //
 //  In no event will the authors be held liable for any damages arising from the use of this software.

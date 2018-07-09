@@ -49,6 +49,10 @@ class PBKDF: XCTestCase {
         // P = "pass\0word", S = "sa\0lt", c = 4096, dkLen = 16
         XCTAssertEqual([0x56, 0xfa, 0x6a, 0xa7, 0x55, 0x48, 0x09, 0x9d, 0xcc, 0x37, 0xd7, 0xf0, 0x34, 0x25, 0xe0, 0xc3],
                        try PKCS5.PBKDF2(password: [0x70, 0x61, 0x73, 0x73, 0x00, 0x77, 0x6f, 0x72, 0x64], salt: [0x73, 0x61, 0x00, 0x6c, 0x74], iterations: 4096, keyLength: 16, variant: .sha1).calculate())
+
+        // P = "", S = "salt", c = 1, dkLen = 20
+        XCTAssertEqual([0xa3, 0x3d, 0xdd, 0xc3, 0x04, 0x78, 0x18, 0x55, 0x15, 0x31, 0x1f, 0x87, 0x52, 0x89, 0x5d, 0x36, 0xea, 0x43, 0x63, 0xa2],
+                       try PKCS5.PBKDF2(password: [], salt: [0x73, 0x61, 0x6c, 0x74], iterations: 1, keyLength: 20, variant: .sha1).calculate())
     }
 
     func testPBKDF2Length() {
@@ -58,26 +62,12 @@ class PBKDF: XCTestCase {
         XCTAssertEqual(value.toHexString(), "a53cf3df485e5cd9")
     }
 
-    #if !CI
-        func testPerformance() {
-            let password: Array<UInt8> = "s33krit".bytes
-            let salt: Array<UInt8> = "nacl".bytes
-            measure {
-                _ = try! PKCS5.PBKDF2(password: password, salt: salt, iterations: 65536, keyLength: 32, variant: .sha1).calculate()
-            }
-        }
-    #endif
-
     static func allTests() -> [(String, (PBKDF) -> () -> Void)] {
-        var tests = [
+        let tests = [
             ("testPBKDF1", testPBKDF1),
             ("testPBKDF2", testPBKDF2),
             ("testPBKDF2Length", testPBKDF2Length),
         ]
-
-        #if !CI
-            tests += [("testPerformance", testPerformance)]
-        #endif
 
         return tests
     }

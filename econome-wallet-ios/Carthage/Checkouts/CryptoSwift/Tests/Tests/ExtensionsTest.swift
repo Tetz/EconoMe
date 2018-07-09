@@ -56,7 +56,7 @@ final class ExtensionsTest: XCTestCase {
 
     func testEmptyStringEncrypt() {
         do {
-            let cipher = try AES(key: "secret0key000000".bytes.md5(), blockMode: .ECB)
+            let cipher = try AES(key: "secret0key000000".bytes.md5(), blockMode: ECB())
             let encrypted = try "".encryptToBase64(cipher: cipher)
             let decrypted = try encrypted?.decryptBase64ToString(cipher: cipher)
             XCTAssertEqual("", decrypted)
@@ -84,24 +84,9 @@ final class ExtensionsTest: XCTestCase {
     }
 }
 
-#if !CI
-
-    extension ExtensionsTest {
-        func testArrayInitHexPerformance() {
-            var str = "b1b2b3b3b3b3b3b3b1b2b3b3b3b3b3b3"
-            for _ in 0...12 {
-                str += str
-            }
-            measure {
-                _ = Array<UInt8>(hex: str)
-            }
-        }
-    }
-#endif
-
 extension ExtensionsTest {
     static func allTests() -> [(String, (ExtensionsTest) -> () -> Void)] {
-        var tests = [
+        let tests = [
             ("testBytes", testBytes),
             ("testToUInt32Array", testToUInt32Array),
             ("testDataInit", testDataInit),
@@ -111,11 +96,6 @@ extension ExtensionsTest {
             ("testArrayInitHex", testArrayInitHex),
         ]
 
-        #if !CI
-            tests += [
-                ("testArrayInitHexPerformance", testArrayInitHexPerformance),
-            ]
-        #endif
         return tests
     }
 }

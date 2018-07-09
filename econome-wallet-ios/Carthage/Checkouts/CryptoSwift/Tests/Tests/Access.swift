@@ -24,6 +24,7 @@ class Access: XCTestCase {
 
     func testChecksum() {
         _ = Checksum.crc32([1, 2, 3])
+        _ = Checksum.crc32c([1, 2, 3])
         _ = Checksum.crc16([1, 2, 3])
     }
 
@@ -60,6 +61,7 @@ class Access: XCTestCase {
         _ = array.sha2(.sha224)
         _ = array.sha3(.sha224)
         _ = array.crc32()
+        _ = array.crc32c()
         _ = array.crc16()
 
         do {
@@ -86,6 +88,7 @@ class Access: XCTestCase {
         _ = string.sha3(.sha224)
         _ = string.crc16()
         _ = string.crc32()
+        _ = string.crc32c()
 
         do {
             _ = try string.encrypt(cipher: cipher)
@@ -137,6 +140,7 @@ class Access: XCTestCase {
         _ = data.sha3(.sha224)
         _ = data.crc16()
         _ = data.crc32()
+        _ = data.crc32c()
 
         _ = data.bytes
         _ = data.toHexString()
@@ -201,7 +205,7 @@ class Access: XCTestCase {
             let enc = try cipher.encrypt([1, 2, 3])
             _ = try cipher.decrypt(enc)
 
-            _ = try AES(key: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6], blockMode: .CBC(iv: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6]), padding: .noPadding)
+            _ = try AES(key: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6], blockMode: CBC(iv: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6]), padding: .noPadding)
 
             _ = AES.Variant.aes128
             _ = AES.blockSize
