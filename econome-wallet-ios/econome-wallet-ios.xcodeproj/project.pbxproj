@@ -13,9 +13,7 @@
 		131E2FF720CAE5900043F60D /* Result.framework in Sources */ = {isa = PBXBuildFile; fileRef = 135027F220BE93770039FC24 /* Result.framework */; };
 		131E2FF820CAE5900043F60D /* APIKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = 135027EC20BE81260039FC24 /* APIKit.framework */; };
 		131E2FF920CAE5900043F60D /* JSONRPCKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = 135027ED20BE81260039FC24 /* JSONRPCKit.framework */; };
-		131E2FFA20CAE5900043F60D /* CryptoEthereumSwift.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6B20BD82D000E50EC8 /* CryptoEthereumSwift.framework */; };
 		131E2FFB20CAE5900043F60D /* CryptoSwift.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6920BD82D000E50EC8 /* CryptoSwift.framework */; };
-		131E2FFC20CAE5900043F60D /* EthereumKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6C20BD82D000E50EC8 /* EthereumKit.framework */; };
 		131E2FFD20CAE5900043F60D /* KeychainSwift.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6820BD82D000E50EC8 /* KeychainSwift.framework */; };
 		131E2FFE20CAE5900043F60D /* SnapKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6720BD82D000E50EC8 /* SnapKit.framework */; };
 		131E2FFF20CAE5900043F60D /* SwiftIconFont.framework in Sources */ = {isa = PBXBuildFile; fileRef = 13E98D6A20BD82D000E50EC8 /* SwiftIconFont.framework */; };
@@ -127,8 +125,6 @@
 		13E98D6820BD82D000E50EC8 /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/iOS/KeychainSwift.framework; sourceTree = "<group>"; };
 		13E98D6920BD82D000E50EC8 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		13E98D6A20BD82D000E50EC8 /* SwiftIconFont.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftIconFont.framework; path = Carthage/Build/iOS/SwiftIconFont.framework; sourceTree = "<group>"; };
-		13E98D6B20BD82D000E50EC8 /* CryptoEthereumSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoEthereumSwift.framework; path = Carthage/Build/iOS/CryptoEthereumSwift.framework; sourceTree = "<group>"; };
-		13E98D6C20BD82D000E50EC8 /* EthereumKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EthereumKit.framework; path = Carthage/Build/iOS/EthereumKit.framework; sourceTree = "<group>"; };
 		13E98D7A20BD836100E50EC8 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		13E98D7C20BD839100E50EC8 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		13E98D7E20BD83B900E50EC8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -250,9 +246,7 @@
 				135027F220BE93770039FC24 /* Result.framework */,
 				135027EC20BE81260039FC24 /* APIKit.framework */,
 				135027ED20BE81260039FC24 /* JSONRPCKit.framework */,
-				13E98D6B20BD82D000E50EC8 /* CryptoEthereumSwift.framework */,
 				13E98D6920BD82D000E50EC8 /* CryptoSwift.framework */,
-				13E98D6C20BD82D000E50EC8 /* EthereumKit.framework */,
 				13E98D6820BD82D000E50EC8 /* KeychainSwift.framework */,
 				13E98D6720BD82D000E50EC8 /* SnapKit.framework */,
 				13E98D6A20BD82D000E50EC8 /* SwiftIconFont.framework */,
@@ -595,9 +589,7 @@
 				131E2FF720CAE5900043F60D /* Result.framework in Sources */,
 				131E2FF820CAE5900043F60D /* APIKit.framework in Sources */,
 				131E2FF920CAE5900043F60D /* JSONRPCKit.framework in Sources */,
-				131E2FFA20CAE5900043F60D /* CryptoEthereumSwift.framework in Sources */,
 				131E2FFB20CAE5900043F60D /* CryptoSwift.framework in Sources */,
-				131E2FFC20CAE5900043F60D /* EthereumKit.framework in Sources */,
 				131E2FFD20CAE5900043F60D /* KeychainSwift.framework in Sources */,
 				131E2FFE20CAE5900043F60D /* SnapKit.framework in Sources */,
 				131E2FFF20CAE5900043F60D /* SwiftIconFont.framework in Sources */,
